@@ -11,20 +11,22 @@ const getChallengesAssets = (source: string) =>
     .filter((dirent) => dirent.isDirectory())
     .map((dirent) => ({
       src: [
-        `./challenges/${dirent.name}/public/fonts`,
-        `./challenges/${dirent.name}/public/images`,
-        `./challenges/${dirent.name}/public/data`,
+        `./src/challenges/${dirent.name}/public/fonts`,
+        `./src/challenges/${dirent.name}/public/images`,
+        `./src/challenges/${dirent.name}/public/data`
       ],
-      dest: "",
+      dest: ""
     }));
 
 const config: UserConfig = {
   plugins: [
-    viteStaticCopy({ targets: getChallengesAssets("./challenges") }),
+    viteStaticCopy({
+      targets: getChallengesAssets("./src/challenges")
+    }),
     svgr(),
     react(),
-    ssr(),
-  ],
+    ssr()
+  ]
 };
 
 export default config;

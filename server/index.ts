@@ -5,7 +5,7 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 
 (async function () {
-  const port = process.env.PORT || 3000;
+  const port = 3000;
   const root = `${dirname(fileURLToPath(import.meta.url))}/..`;
   const app = express();
   const viteDevMiddleware = (
@@ -13,7 +13,7 @@ import { fileURLToPath } from "url";
       await import("vite")
     ).createServer({
       root,
-      server: { middlewareMode: true },
+      server: { middlewareMode: true }
     })
   ).middlewares;
 
@@ -22,7 +22,7 @@ import { fileURLToPath } from "url";
 
   app.get("*", async (req, res, next) => {
     const pageContextInit = {
-      urlOriginal: req.originalUrl,
+      urlOriginal: req.originalUrl
     };
     const pageContext = await renderPage(pageContextInit);
     const { httpResponse } = pageContext;
