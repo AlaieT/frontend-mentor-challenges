@@ -5,5 +5,8 @@
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["scripts/vite/vite.config.ts", "server/index.ts"]
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["vite.config.ts", "server/index.ts"]
 }

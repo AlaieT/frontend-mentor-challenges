@@ -10,7 +10,7 @@ async function render(pageContext: any) {
     throw new Error(
       "Client-side render() hook expects pageContext.Page to be defined"
     );
-  hydrateRoot(document.getElementById("page-view")!, <Page />);
+  hydrateRoot(document.getElementById("root")!, <Page />);
 }
 
 /* To enable Client-side Routing:
