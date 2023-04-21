@@ -6,13 +6,13 @@ import { fileURLToPath } from "url";
 
 (async function () {
   const port = 3000;
-  const root = `${dirname(fileURLToPath(import.meta.url))}/..`;
   const app = express();
   const viteDevMiddleware = (
     await (
       await import("vite")
     ).createServer({
-      root,
+      root: `${dirname(fileURLToPath(import.meta.url))}/..`,
+      configFile: `${dirname(fileURLToPath(import.meta.url))}/../scripts/vite/vite.config.ts`,
       server: { middlewareMode: true }
     })
   ).middlewares;
