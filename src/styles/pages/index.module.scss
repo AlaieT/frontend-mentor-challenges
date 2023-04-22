@@ -1,0 +1,106 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+header {
+  width: 100%;
+  height: 50px;
+  flex: none;
+
+  @include flex("space-between&center");
+
+  & h1 {
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
+
+main {
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: space-between;
+}
+
+.challenge {
+  width: 300px;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  & img {
+    width: 300px;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  & .tags {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include flex("space-between&center");
+
+    & ul {
+      list-style: none;
+
+      @include flex("");
+
+      & li {
+        margin: 0 5px 0 0;
+
+        &:nth-child(1) {
+          color: rgb(115 207 223);
+        }
+
+        &:nth-child(2) {
+          color: rgb(76 103 202);
+        }
+
+        &:nth-child(3) {
+          color: rgb(227 107 157);
+        }
+      }
+    }
+
+    & p {
+      padding: 0 20px;
+      border-radius: 5px;
+    }
+
+    & .newbie {
+      color: rgb(106 190 205);
+      border: 1px solid rgb(106 190 205);
+    }
+
+    & .junior {
+      color: rgb(170 215 66);
+      border: 1px solid rgb(170 215 66);
+    }
+
+    & .intermediate {
+      color: rgb(241 182 4);
+      border: 1px solid rgb(241 182 4);
+    }
+
+    & .advanced {
+      color: rgb(244 137 37);
+      border: 1px solid rgb(244 137 37);
+    }
+
+    & .guru {
+      color: rgb(237 44 73);
+      border: 1px solid rgb(237 44 73);
+    }
+  }
+
+  & .name {
+    margin: 10px 0 0;
+    padding: 5px 0 0;
+    border-top: 1px solid $prime-text-color;
+
+    @include flex("space-between&center");
+  }
+}

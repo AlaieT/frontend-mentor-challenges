@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "ts-node --project tsconfig.node.json ./server/index.ts",
-    "build": "vite build -c ./vite.config.ts",
+    "build": "vite build -c ./scripts/vite/vite.config.ts",
     "type": "tsc --noEmit",
     "test": "jest -c ./scripts/jest/jest.config.cjs",
     "lint": "eslint './src/**/*.{*.ts, *.tsx}'",
