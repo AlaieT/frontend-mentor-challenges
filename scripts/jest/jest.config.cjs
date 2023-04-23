@@ -8,6 +8,9 @@ module.exports = {
   testEnvironment: "jsdom",
   rootDir: "../../",
   testMatch: ["**/__tests__/**/*.(spec|test).ts?(x)"],
+  transform: {
+    "^.+\\.tsx?$": "@swc/jest"
+  },
   moduleNameMapper: {
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
 
@@ -20,12 +23,14 @@ module.exports = {
     "!**/src/types.ts",
     "!**/node_modules/**",
     "!**/dist/**",
-    "!**/__tests__/**"
+    "!**/__tests__/**",
+    "!**/server/**"
   ],
   modulePathIgnorePatterns: [
-    "<rootDir>/src/challenges/*",
-    "<rootDir>/src/utils/*",
+    "<rootDir>/src/challenges/**",
+    "<rootDir>/src/utils/**",
     "<rootDir>/src/types.ts",
+    "<rootDir>/src/renderer",
     "<rootDir>/scripts/vite/vite.config.ts"
   ]
 };

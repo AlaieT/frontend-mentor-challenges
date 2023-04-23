@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./docs/1440x720_desktop.png)
+![](../../../public/images/preview_ResultsSummaryComponent.png)
 
 ### Links
 

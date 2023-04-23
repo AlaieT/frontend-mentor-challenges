@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Challenge correct render should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="challenge active"
+  >
+    <div
+      class="preview"
+    >
+      <img
+        alt="preview Some challenge"
+        src="https://some-img.png"
+      />
+    </div>
+    <div
+      class="name"
+    >
+      <p>
+        Some challenge
+      </p>
+      <div
+        height="28"
+        width="28"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

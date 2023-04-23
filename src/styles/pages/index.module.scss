@@ -3,115 +3,49 @@
 
 header {
   width: 100%;
-  max-width: 1280px;
-  border-bottom: 1px solid $prime-text-color;
+  max-width: 1440px;
   flex: none;
-
-  @include flex("start&center");
 
   & h1 {
     color: $prime-text-color;
     font-family: SixCaps, sans-serif;
-    font-size: 128px;
-    font-weight: 300;
+    font-size: 64px;
     text-transform: uppercase;
     letter-spacing: 5px;
+
+    @include flex("start&center");
+
+    & span {
+      width: 100px;
+      margin: 0 25px;
+      border-bottom: 2px solid $prime-text-color;
+    }
   }
 }
 
 footer {
   width: 100%;
   height: 50px;
+  font-size: 12px;
 
   @include flex("center&center");
 }
 
 main {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1440px;
   height: 100%;
-  padding: 50px 0;
-  display: grid;
-  grid-template-columns: repeat(3, 400px);
-  justify-content: space-between;
-}
+  margin: 25px 0;
+  flex-grow: 1;
 
-.challenge {
-  width: 400px;
-  font-size: 16px;
-  text-transform: uppercase;
+  @include flex("center&center","col");
 
-  & img {
-    width: 400px;
-    height: 220px;
-    object-fit: cover;
-  }
-
-  & .tags {
-    margin: 10px 0 0;
-    font-size: 14px;
-    line-height: 20px;
-
-    @include flex("space-between&center");
-
-    & ul {
-      list-style: none;
-
-      @include flex("");
-
-      & li {
-        margin: 0 5px 0 0;
-
-        &:nth-child(1) {
-          color: rgb(115 207 223);
-        }
-
-        &:nth-child(2) {
-          color: rgb(76 103 202);
-        }
-
-        &:nth-child(3) {
-          color: rgb(227 107 157);
-        }
-      }
-    }
-
-    & p {
-      padding: 0 20px;
-      border-radius: 5px;
-    }
-
-    & .newbie {
-      color: rgb(106 190 205);
-      border: 1px solid rgb(106 190 205);
-    }
-
-    & .junior {
-      color: rgb(170 215 66);
-      border: 1px solid rgb(170 215 66);
-    }
-
-    & .intermediate {
-      color: rgb(241 182 4);
-      border: 1px solid rgb(241 182 4);
-    }
-
-    & .advanced {
-      color: rgb(244 137 37);
-      border: 1px solid rgb(244 137 37);
-    }
-
-    & .guru {
-      color: rgb(237 44 73);
-      border: 1px solid rgb(237 44 73);
-    }
-  }
-
-  & .name {
-    margin: 10px 0 0;
-    padding: 5px 0 0;
-    border-top: 1px solid $prime-text-color;
-
-    @include flex("space-between&center");
+  & #challenges {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, min(100vw - 30px, 400px));
+    justify-content: space-around;
+    column-gap: 25px;
+    row-gap: 25px;
   }
 }

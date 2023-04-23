@@ -1,61 +1,49 @@
 import React from "react";
 
-import { ReactComponent as ArrowOutward } from "../../public/images/arrow_outward.svg";
+import Challenge from "../components/Challenge";
 
 import styles from "../styles/pages/index.module.scss";
 
 import "../styles/global.scss";
 
+const CHALLENGES = [
+  {
+    name: "result summary component",
+    imgSrc:
+      "https://github.com/AlaieT/results-summary-component/raw/main/docs/1440x720_desktop.png"
+  },
+  {
+    name: "multi step form",
+    imgSrc:
+      "https://github.com/AlaieT/multi-step-form/raw/main/docs/screenshot.png"
+  },
+  {
+    name: "launch countdown timer",
+    imgSrc:
+      "https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png"
+  }
+];
+
 const Page = () => {
   return (
     <>
       <header>
-        <h1>frontend mentor challenges</h1>
+        <h1>
+          frontend mentor
+          <span />
+          challenges
+        </h1>
       </header>
       <main>
-        <div className={styles.challenge}>
-          <img src="https://github.com/AlaieT/results-summary-component/raw/main/docs/1440x720_desktop.png" />
-          <div className={styles.tags}>
-            <ul>
-              <li>#html</li>
-              <li>#css</li>
-            </ul>
-            <p className={styles.newbie}>newbie</p>
-          </div>
-          <div className={styles.name}>
-            <p>result summary component</p>
-            <ArrowOutward width={28} height={28} />
-          </div>
-        </div>
-        <div className={styles.challenge}>
-          <img src="https://github.com/AlaieT/multi-step-form/raw/main/docs/screenshot.png" />
-          <div className={styles.tags}>
-            <ul>
-              <li>#html</li>
-              <li>#css</li>
-              <li>#js</li>
-            </ul>
-            <p className={styles.advanced}>advanced</p>
-          </div>
-          <div className={styles.name}>
-            <p>multi step form</p>
-            <ArrowOutward width={28} height={28} />
-          </div>
-        </div>
-        <div className={styles.challenge}>
-          <img src="https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png" />
-          <div className={styles.tags}>
-            <ul>
-              <li>#html</li>
-              <li>#css</li>
-              <li>#js</li>
-            </ul>
-            <p className={styles.intermediate}>intermediate</p>
-          </div>
-          <div className={styles.name}>
-            <p>launch countdown timer</p>
-            <ArrowOutward width={28} height={28} />
-          </div>
+        <div id={styles.challenges}>
+          {CHALLENGES.map(({ name, imgSrc }, idx) => (
+            <Challenge
+              key={name}
+              delay={350 * idx}
+              name={name}
+              imgSrc={imgSrc}
+            />
+          ))}
         </div>
       </main>
       <footer>Ilya「Alaie」Shafeev</footer>
