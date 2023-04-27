@@ -38,7 +38,22 @@ main {
   margin: 25px 0;
   flex-grow: 1;
 
-  @include flex("center&center","col");
+  @include flex("start&center", "col");
+
+  & #filter {
+    width: 100%;
+    margin: 0 0 25px;
+
+    & input {
+      width: 100%;
+      max-width: 400px;
+      height: 50px;
+      padding: 0 25px;
+      border: none;
+      border-bottom: 1px solid $prime-text-color;
+      outline: none;
+    }
+  }
 
   & #challenges {
     width: 100%;

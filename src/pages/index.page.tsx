@@ -35,6 +35,9 @@ const Page = () => {
         </h1>
       </header>
       <main>
+        <div id={styles.filter}>
+          <input type="text" placeholder="Challenge name" />
+        </div>
         <div id={styles.challenges}>
           {CHALLENGES.map(({ name, imgSrc }, idx) => (
             <Challenge
