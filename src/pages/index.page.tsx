@@ -1,9 +1,8 @@
 import React from "react";
 
-import Challenge from "../components/Challenge";
+import Gallery from "../components/Gallery";
 
-import styles from "../styles/pages/index.module.scss";
-
+import "../styles/pages/index.module.scss";
 import "../styles/global.scss";
 
 const CHALLENGES = [
@@ -21,7 +20,52 @@ const CHALLENGES = [
     name: "launch countdown timer",
     imgSrc:
       "https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png"
-  }
+  },
+  {
+    name: "result summary component",
+    imgSrc:
+      "https://github.com/AlaieT/results-summary-component/raw/main/docs/1440x720_desktop.png"
+  },
+  {
+    name: "multi step form",
+    imgSrc:
+      "https://github.com/AlaieT/multi-step-form/raw/main/docs/screenshot.png"
+  },
+  {
+    name: "launch countdown timer",
+    imgSrc:
+      "https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png"
+  },
+  {
+    name: "result summary component",
+    imgSrc:
+      "https://github.com/AlaieT/results-summary-component/raw/main/docs/1440x720_desktop.png"
+  },
+  {
+    name: "multi step form",
+    imgSrc:
+      "https://github.com/AlaieT/multi-step-form/raw/main/docs/screenshot.png"
+  },
+  {
+    name: "launch countdown timer",
+    imgSrc:
+      "https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png"
+  },
+  {
+    name: "result summary component",
+    imgSrc:
+      "https://github.com/AlaieT/results-summary-component/raw/main/docs/1440x720_desktop.png"
+  },
+  {
+    name: "multi step form",
+    imgSrc:
+      "https://github.com/AlaieT/multi-step-form/raw/main/docs/screenshot.png"
+  },
+  {
+    name: "launch countdown timer",
+    imgSrc:
+      "https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png"
+  },
 ];
 
 const Page = () => {
@@ -33,22 +77,13 @@ const Page = () => {
           <span />
           challenges
         </h1>
+        <p>
+          This website contains my solution for Frontend Mentor challenges. All
+          challenges made as individual web projects, so they include using of
+          frameworks, linters, testing and e.t.c.
+        </p>
       </header>
-      <main>
-        <div id={styles.filter}>
-          <input type="text" placeholder="Challenge name" />
-        </div>
-        <div id={styles.challenges}>
-          {CHALLENGES.map(({ name, imgSrc }, idx) => (
-            <Challenge
-              key={name}
-              delay={350 * idx}
-              name={name}
-              imgSrc={imgSrc}
-            />
-          ))}
-        </div>
-      </main>
+      <Gallery challenges={CHALLENGES} />
       <footer>Ilya「Alaie」Shafeev</footer>
     </>
   );
