@@ -2,4 +2,5 @@
 /dist
 /coverage
 /**/__tests__
+/**/__mocks__
 /src/challenges

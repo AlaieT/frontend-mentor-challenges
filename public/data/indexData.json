@@ -1,0 +1,16 @@
+{
+  "challenges": [
+    {
+      "name": "result summary component",
+      "imgSrc": "https://github.com/AlaieT/results-summary-component/raw/main/docs/1440x720_desktop.png"
+    },
+    {
+      "name": "multi step form",
+      "imgSrc": "https://github.com/AlaieT/multi-step-form/raw/main/docs/screenshot.png"
+    },
+    {
+      "name": "launch countdown timer",
+      "imgSrc": "https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png"
+    }
+  ]
+}

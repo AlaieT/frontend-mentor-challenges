@@ -41,12 +41,6 @@
 
     @include flex("space-between&center");
 
-    & path {
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 0;
-      transition: $animation-transition;
-    }
-
     & p,
     svg {
       transition: $animation-transition;

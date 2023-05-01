@@ -1,58 +1,96 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Challenge from "../Challenge";
+import getPages from "../../utils/getPages";
 
 import type { GalleryProps } from "../../types";
 
+import { ReactComponent as SearchIcon } from "../../assets/images/search.svg";
+
 import styles from "../../styles/components/gallery.module.scss";
 
-const getPages = (current: number, last: number) => {
-  const length = last > 7 ? 7 : last;
-  const pages = Array(length);
-
-  if (length > 1) pages[length - 1] = last;
-
-  if (current < 5) {
-    pages.map((_, idx) => idx + 1);
-
-    if (last > 7) {
-      pages[length - 2] = "";
-      pages[length - 1] = last;
-    }
-  }
-
-  return pages;
-};
+const ON_PAGE = 6;
 
 const Gallery = ({ challenges }: GalleryProps) => {
-  const [page, setPage] = useState(1);
+  const pagesCount = React.useMemo(
+    () => Math.ceil(challenges.length / ON_PAGE),
+    [challenges]
+  );
+  const [page, setPage] = React.useState(1);
+  const [isChangingPage, setIsChangingPage] = React.useState(false);
+  const [filterValue, setFilterValue] = React.useState("");
+  const inputRef = React.useRef<null | HTMLInputElement>(null);
+
+  const handleChangePage = (pageNumber: number) => {
+    if (!isChangingPage) {
+      setTimeout(() => {
+        setIsChangingPage((item) => !item);
+        setPage(pageNumber);
+      }, 1900);
+      setIsChangingPage((item) => !item);
+    }
+  };
+
+  const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setTimeout(() => {
+      setIsChangingPage((item) => !item);
+      setFilterValue(inputRef.current?.value || "");
+    }, 1900);
+    setIsChangingPage((item) => !item);
+  };
 
   return (
     <main>
-      <div id={styles.filter}>
-        <input type="text" placeholder="Challenge name" />
-      </div>
+      <form id={styles.filter} onSubmit={handleOnSubmit}>
+        <SearchIcon width={20} height={20} />
+        <input type="text" placeholder="Challenge name" ref={inputRef} />
+      </form>
       <div id={styles.challenges}>
         {challenges
-          .slice((page - 1) * 6, page * 6)
+          .filter((item) => !!RegExp(filterValue).exec(item.name))
+          .slice((page - 1) * ON_PAGE, page * ON_PAGE)
           .map(({ name, imgSrc }, idx) => (
             <Challenge
               key={name}
-              delay={350 * idx}
+              delay={200 * (idx - (page - 1) * ON_PAGE)}
               name={name}
               imgSrc={imgSrc}
+              disabled={isChangingPage}
             />
           ))}
       </div>
-      <div id={styles.pagination}>
-        <button id={styles.back} disabled={page == 1}></button>
-        <div id={styles.pages}>
-          {getPages(1, challenges.length).map((item) => (
-            <span>{item}</span>
-          ))}
+      {pagesCount > 1 && (
+        <div id={styles.pagination}>
+          <button
+            id={styles.back}
+            type="button"
+            disabled={page === 1 || isChangingPage}
+            onClick={() => handleChangePage(page - 1)}
+          >
+            back
+          </button>
+          <ul id={styles.pages}>
+            {getPages(page, pagesCount).map((item, idx) => (
+              <li
+                key={idx}
+                id={item === page ? styles.active : undefined}
+                onClick={() => handleChangePage(item)}
+              >
+                {item > 0 ? item : "..."}
+              </li>
+            ))}
+          </ul>
+          <button
+            id={styles.next}
+            type="button"
+            disabled={page === pagesCount || isChangingPage}
+            onClick={() => handleChangePage(page + 1)}
+          >
+            next
+          </button>
         </div>
-        <button id={styles.next} disabled={page == challenges.length}></button>
-      </div>
+      )}
     </main>
   );
 };

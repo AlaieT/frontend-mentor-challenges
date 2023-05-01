@@ -8,7 +8,7 @@
     "build": "vite build -c ./scripts/vite/vite.config.ts",
     "type": "tsc --noEmit",
     "test": "jest -c ./scripts/jest/jest.config.cjs",
-    "lint": "eslint './src/**/*.{*.ts, *.tsx}'",
+    "lint": "eslint ./src",
     "lint:fix": "yarn lint --fix",
     "style": "stylelint './src/**/*.scss'",
     "style:fix": "yarn style --fix"
