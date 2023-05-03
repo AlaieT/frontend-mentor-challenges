@@ -20,6 +20,7 @@ describe("Challenge", () => {
             delay={props.delay}
             name={props.name}
             imgSrc={props.imgSrc}
+            disabled={false}
           />
         ).asFragment()
       ).toMatchSnapshot();

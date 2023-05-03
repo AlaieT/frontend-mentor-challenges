@@ -14,6 +14,11 @@
     justify-content: start;
     align-items: center;
   }
+  
+  @if $param == "start&end" {
+    justify-content: start;
+    align-items: end;
+  }
 
   @if $param == "space-between&center" {
     justify-content: space-between;
