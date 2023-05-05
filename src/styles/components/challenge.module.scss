@@ -3,68 +3,37 @@
 
 .challenge {
   cursor: pointer;
-  height: max-content;
-  text-transform: uppercase;
-  transition: $animation-transition;
+  text-transform: capitalize;
 
-  & .preview {
-    overflow: hidden;
-    position: relative;
-
-    & img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      transform-origin: right;
-      transition: $animation-transition;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $prime-background-color;
-      transform-origin: right;
-      transition: $animation-transition;
-      transform: scaleX(0);
-    }
+  & img {
+    width: 100%;
+    display: block;
+    filter: grayscale(100%) opacity(0.25);
+    transition: $animation-transition;
   }
 
   & .name {
     overflow: hidden;
-    position: relative;
     width: 100%;
+    height: 25px;
     margin: 5px 0 0;
+    font-size: 12px;
 
-    @include flex("space-between&center");
-
-    & p,
-    svg {
+    & p {
       transition: $animation-transition;
+      transform: translateY(-100%);
     }
   }
 
-  &.active {
-    & .preview {
-      & img {
-        transform-origin: right;
-        transform: translateX(-10%);
-      }
-
-      &::before {
-        transform-origin: right;
-        transform: scaleX(1);
-      }
+  &:hover {
+    & img {
+      filter: grayscale(0%) opacity(1);
+      opacity: 1;
     }
 
     & .name {
-      & p,
-      svg {
-        transform: translateY(120%);
+      & p {
+        transform: translateY(0%);
       }
     }
   }

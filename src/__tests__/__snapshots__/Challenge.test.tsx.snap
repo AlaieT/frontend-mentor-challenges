@@ -3,26 +3,18 @@
 exports[`Challenge correct render should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="challenge active"
+    class="challenge"
   >
-    <div
-      class="preview"
-    >
-      <img
-        alt="preview Some challenge"
-        src="https://some-img.png"
-      />
-    </div>
+    <img
+      alt="preview Some challenge"
+      src="https://some-img.png"
+    />
     <div
       class="name"
     >
       <p>
         Some challenge
       </p>
-      <div
-        height="28"
-        width="28"
-      />
     </div>
   </div>
 </DocumentFragment>

@@ -8,7 +8,12 @@ async function render(pageContext: any) {
       "Client-side render() hook expects pageContext.Page to be defined"
     );
   }
-  hydrateRoot(document.getElementById("root")!, <Page />);
+  hydrateRoot(
+    document.getElementById("root")!,
+    <React.StrictMode>
+      <Page />
+    </React.StrictMode>
+  );
 }
 
 export { render };

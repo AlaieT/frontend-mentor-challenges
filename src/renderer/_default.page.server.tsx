@@ -9,7 +9,11 @@ async function render(pageContext: any) {
     throw new Error("My render() hook expects pageContext.Page to be defined");
   }
 
-  const pageHtml = ReactDOMServer.renderToString(<Page />);
+  const pageHtml = ReactDOMServer.renderToString(
+    <React.StrictMode>
+      <Page />
+    </React.StrictMode>
+  );
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">
