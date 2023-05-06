@@ -4,7 +4,7 @@ import Gallery from "../components/Gallery";
 
 import type { GalleryProps } from "../types";
 
-import "../styles/pages/index.module.scss";
+import styles from "../styles/pages/index.module.scss";
 import "../styles/global.scss";
 
 const Page = () => {
@@ -22,14 +22,23 @@ const Page = () => {
         <header>
           <h1>
             frontend mentor
-            <span />
+            &#8212;
             challenges
           </h1>
-          <p>
-            This website contains my solution for Frontend Mentor challenges.
-            All challenges made as individual web projects, so they include
-            using of frameworks, linters, testing and e.t.c.
-          </p>
+          <ul id={styles.description}>
+            <li>
+              This website contains my solutions for Frontend Mentor challenges.
+            </li>
+            <li>
+              All challenges made as individual web projects, so they include
+              using of frameworks, linters, testing and e.t.c. to make practice
+              building websites in a realistic workflow.
+            </li>
+            <li>
+              All of these challenges help improve skills and gain experience
+              creating websites.
+            </li>
+          </ul>
         </header>
         <Gallery challenges={pageData.challenges} />
         <footer>Ilya「Alaie」Shafeev</footer>

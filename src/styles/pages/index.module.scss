@@ -3,27 +3,24 @@
 
 header {
   width: 100%;
-  max-width: 1275px;
+  max-width: 1675px;
   flex: none;
 
   & h1 {
     color: $prime-text-color;
     font-family: SixCaps, sans-serif;
-    font-size: 128px;
+    font-size: clamp(16px, 12vw, 256px);
     text-transform: uppercase;
     letter-spacing: 5px;
-
-    @include flex("start&center");
-
-    & span {
-      width: 100px;
-      margin: 0 25px;
-      border-bottom: 2px solid $prime-text-color;
-    }
   }
 
-  & p{
-    max-width: 700px;
+  & #description {
+    list-style: none;
+    max-width: 450px;
+
+    & li {
+      margin: 10px 0;
+    }
   }
 }
 

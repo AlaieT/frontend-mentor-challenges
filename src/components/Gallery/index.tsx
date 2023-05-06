@@ -6,6 +6,21 @@ import type { GalleryProps } from "../../types";
 
 import styles from "../../styles/components/gallery.module.scss";
 
+function getChunkSize() {
+  if (window !== undefined) {
+    const chunkWidth = 425;
+    const { innerWidth } = window;
+
+    if (innerWidth >= chunkWidth * 4) return 4;
+    if (innerWidth >= chunkWidth * 3) return 3;
+    if (innerWidth >= chunkWidth * 2) return 2;
+
+    return 1;
+  }
+
+  return 4;
+}
+
 function toChunks<T>(arr: T[], chunkSize: number) {
   const chunks: { key: number; chunk: T[] }[] = Array.from(
     { length: chunkSize },
@@ -25,12 +40,22 @@ function toChunks<T>(arr: T[], chunkSize: number) {
 }
 
 const Gallery = ({ challenges }: GalleryProps) => {
-  const chunks = React.useMemo(() => toChunks(challenges, 4), [challenges]);
+  const [chunkSize, setChunkSize] = React.useState(getChunkSize());
+  const chunks = React.useMemo(
+    () => toChunks(challenges, chunkSize),
+    [challenges, chunkSize]
+  );
+
+  React.useEffect(() => {
+    window.addEventListener("resize", () => {
+      setChunkSize(getChunkSize());
+    });
+  }, []);
 
   return (
     <main>
       <div id={styles.challenges}>
-        {chunks.map(({ chunk, key }) => (
+        {chunks?.map(({ chunk, key }) => (
           <div key={`chunk_${key}`} className={styles.chunk}>
             {chunk.map(({ name, imgSrc }) => (
               <Challenge key={name} name={name} imgSrc={imgSrc} />

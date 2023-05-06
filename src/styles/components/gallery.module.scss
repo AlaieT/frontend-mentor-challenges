@@ -3,7 +3,7 @@
 
 main {
   width: 100%;
-  max-width: 1275px;
+  max-width: 1675px;
   height: 100%;
   margin: 25px 0;
   flex-grow: 1;
@@ -16,8 +16,9 @@ main {
     margin: 20px 0;
     flex-grow: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fill, min(100vw - 30px, 300px));
+    grid-template-columns: repeat(auto-fill, min(100vw - 30px, 400px));
     column-gap: 25px;
+    justify-content: center;
 
     & .chunk {
       @include flex("start&center", "col");
