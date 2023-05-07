@@ -2,62 +2,77 @@
   "challenges": [
     {
       "name": "result summary component",
+      "number": 1,
       "imgSrc": "https://github.com/AlaieT/results-summary-component/raw/main/docs/1440x720_desktop.png"
     },
     {
       "name": "multi step form",
+      "number": 2,
       "imgSrc": "https://github.com/AlaieT/multi-step-form/raw/main/docs/screenshot.png"
     },
     {
       "name": "launch countdown timer",
+      "number": 3,
       "imgSrc": "https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png"
     },
     {
       "name": "result summary component1",
+      "number": 4,
       "imgSrc": "https://github.com/AlaieT/results-summary-component/raw/main/docs/1440x720_desktop.png"
     },
     {
       "name": "multi step form1",
+      "number": 5,
       "imgSrc": "https://github.com/AlaieT/multi-step-form/raw/main/docs/screenshot.png"
     },
     {
       "name": "launch countdown timer1",
+      "number": 6,
       "imgSrc": "https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png"
     },
     {
       "name": "result summary component2",
+      "number": 7,
       "imgSrc": "https://github.com/AlaieT/results-summary-component/raw/main/docs/1440x720_desktop.png"
     },
     {
       "name": "multi step form2",
+      "number": 8,
       "imgSrc": "https://github.com/AlaieT/multi-step-form/raw/main/docs/screenshot.png"
     },
     {
       "name": "launch countdown timer2",
+      "number": 9,
       "imgSrc": "https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png"
     },
     {
       "name": "result summary component3",
+      "number": 10,
       "imgSrc": "https://github.com/AlaieT/results-summary-component/raw/main/docs/1440x720_desktop.png"
     },
     {
       "name": "multi step form3",
+      "number": 11,
       "imgSrc": "https://github.com/AlaieT/multi-step-form/raw/main/docs/screenshot.png"
     },
     {
       "name": "launch countdown timer3",
+      "number": 12,
       "imgSrc": "https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png"
     },
     {
       "name": "result summary component4",
+      "number": 13,
       "imgSrc": "https://github.com/AlaieT/results-summary-component/raw/main/docs/1440x720_desktop.png"
     },
     {
       "name": "multi step form4",
+      "number": 14,
       "imgSrc": "https://github.com/AlaieT/multi-step-form/raw/main/docs/screenshot.png"
     },
     {
       "name": "launch countdown timer4",
+      "number": 15,
       "imgSrc": "https://github.com/AlaieT/launch-countdown-timer/raw/master/docs/screenshot_desktop.png"
     }
   ]

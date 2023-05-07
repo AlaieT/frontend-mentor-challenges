@@ -1,5 +1,6 @@
 export interface ChallengeProps {
   name: string;
+  number:number;
   imgSrc: string;
 }
 

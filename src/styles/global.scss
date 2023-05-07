@@ -23,7 +23,7 @@ html {
 }
 
 div[id="root"] {
-  padding: 0 15px;
+  padding: 25px;
   background-color: $prime-background-color;
 
   @include flex("center&center", "col");
