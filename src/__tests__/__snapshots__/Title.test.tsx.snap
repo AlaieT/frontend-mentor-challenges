@@ -30,7 +30,7 @@ exports[`Title correct render should match snapshot after animation 1`] = `
       d
     </span>
     <span>
-       
+       
     </span>
     <span>
       m
@@ -92,7 +92,9 @@ exports[`Title correct render should match snapshot before animation 1`] = `
   <h1
     id="title"
   >
-    <span>
+    <span
+      class="disabled"
+    >
       f
     </span>
     <span
@@ -133,7 +135,7 @@ exports[`Title correct render should match snapshot before animation 1`] = `
     <span
       class="disabled"
     >
-       
+       
     </span>
     <span
       class="disabled"

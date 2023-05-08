@@ -22,23 +22,9 @@ const Score = ({ score, delay }: ScoreProps) => {
 
   return (
     <div id={styles.score}>
-      <svg
-        width="100"
-        height="100"
-        viewBox="0 0 100 100"
-        strokeDasharray={310}
-        strokeDashoffset={Math.floor(310 * (1 - count / score))}
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="48"
-          fill="none"
-          stroke="white"
-          strokeWidth="2"
-        />
-      </svg>
-      <p>{count}</p>
+      <p>
+        <span>{count}</span>&nbsp;&#8212;&nbsp;completed 
+      </p>
     </div>
   );
 };

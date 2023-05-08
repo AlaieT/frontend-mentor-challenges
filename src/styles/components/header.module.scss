@@ -23,6 +23,18 @@
   }
 }
 
+@keyframes opacity-left-awake {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes scale-x-awake {
   0%,
   20% {
@@ -46,12 +58,26 @@
   }
 }
 
+@keyframes scale-y-awake {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
 header {
   width: 100%;
+  height: calc(100vh - 50px);
   max-width: 1675px;
   flex: none;
 
+  @include flex("space-between&start", "col");
+
   & #credentials {
+    width: 100%;
     font-size: 12px;
     list-style: none;
 
@@ -78,16 +104,46 @@ header {
 
   & #description {
     width: 100%;
-    margin: 25px 0 50px;
+    font-size: 18px;
     list-style: none;
 
     & li {
       overflow: hidden;
+    }
 
-      & p {
-        margin: 0 0 10px;
-        animation: 2000ms opacity-up-awake cubic-bezier(0.36, 0, 0.34, 0.87);
-      }
+    & p {
+      margin: 0 0 10px;
+      animation: 2500ms opacity-up-awake cubic-bezier(0.36, 0, 0.34, 0.87);
+    }
+  }
+
+  & #scroll {
+    position: relative;
+    height: 200px;
+    margin-left: auto;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    overflow: hidden;
+
+    & p {
+      animation: 1000ms opacity-left-awake cubic-bezier(0.36, 0, 0.34, 0.87);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      border-right: 1px solid $prime-text-color;
+      transform-origin: top;
+      animation: 1000ms scale-y-awake cubic-bezier(0.36, 0, 0.34, 0.87);
+    }
+  }
+}
+
+@media (width <= 750px) {
+  header {
+    & #description {
+      font-size: 12px;
     }
   }
 }

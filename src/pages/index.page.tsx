@@ -19,7 +19,7 @@ const Page = () => {
   return (
     pageData && (
       <>
-        <Header />
+        <Header challengesCount={pageData.challenges.length} />
         <Gallery challenges={pageData.challenges} />
       </>
     )

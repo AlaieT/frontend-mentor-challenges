@@ -5,10 +5,18 @@ main {
   width: 100%;
   max-width: 1675px;
   height: 100%;
-  margin: 25px 0;
+  margin: 200px 0;
   flex-grow: 1;
 
   @include flex("start&center", "col");
+
+  & #titleTag {
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    font-size: 24px;
+    text-transform: uppercase;
+    border-bottom: 1px solid $prime-text-color;
+  }
 
   & #challenges {
     width: 100%;

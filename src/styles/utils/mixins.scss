@@ -9,15 +9,15 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   @if $param == "start&center" {
     justify-content: start;
     align-items: center;
   }
-  
-  @if $param == "start&end" {
-    justify-content: start;
-    align-items: end;
+
+  @if $param == "end&center" {
+    justify-content: end;
+    align-items: center;
   }
 
   @if $param == "space-between&center" {

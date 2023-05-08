@@ -1,11 +1,13 @@
 import React from "react";
 
 import Title from "../Title";
-
-import styles from "../../styles/components/header.module.scss";
 import Score from "../Score";
 
-const Header = () => (
+import type { HeaderProps } from "../../types";
+
+import styles from "../../styles/components/header.module.scss";
+
+const Header = ({ challengesCount }: HeaderProps) => (
   <header>
     <ul id={styles.credentials}>
       <li>
@@ -44,8 +46,9 @@ const Header = () => (
         </p>
       </li>
     </ul>
-    <div id={styles.solved}>
-      <Score score={25} delay={50} />
+    <Score score={challengesCount} delay={25} />
+    <div id={styles.scroll}>
+      <p>scroll down</p>
     </div>
   </header>
 );

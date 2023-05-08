@@ -17,3 +17,7 @@ export interface ScoreProps {
   score: number;
   delay: number;
 }
+
+export interface HeaderProps {
+  challengesCount: number;
+}
