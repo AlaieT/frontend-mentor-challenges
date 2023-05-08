@@ -15,6 +15,9 @@ exports[`Challenge correct render should match snapshot 1`] = `
       <p>
         Some challenge
       </p>
+      <p>
+        000-
+      </p>
     </div>
   </div>
 </DocumentFragment>

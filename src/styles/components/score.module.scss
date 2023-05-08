@@ -1,0 +1,16 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+#score {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  font-size: 32px;
+
+  @include flex("center&center");
+
+  & svg {
+    position: absolute;
+    transition: $animation-transition;
+  }
+}
