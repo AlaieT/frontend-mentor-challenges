@@ -2,15 +2,12 @@
 @import "../utils/mixins";
 
 #title {
-  // min-height: 200px;
   color: $prime-text-color;
-  font-family: SixCaps, sans-serif;
-  font-size: clamp(16px, 14.5vw, 285px);
+  font-family: "Six Caps", sans-serif;
+  font-size: clamp(12px, 13vw, 255px);
   text-transform: uppercase;
   overflow: hidden;
   flex: none;
-
-  @include flex("center&center");
 
   & span {
     display: inline-block;

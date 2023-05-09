@@ -1,7 +1,9 @@
 import React from "react";
 import { hydrateRoot } from "react-dom/client";
 
-async function render(pageContext: any) {
+import type { PageContextClient } from "../types";
+
+async function render(pageContext: PageContextClient) {
   const { Page } = pageContext;
   if (!Page) {
     throw new Error(

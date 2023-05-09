@@ -19,7 +19,7 @@ const Page = () => {
   return (
     pageData && (
       <>
-        <Header challengesCount={pageData.challenges.length} />
+        <Header />
         <Gallery challenges={pageData.challenges} />
       </>
     )
@@ -27,3 +27,9 @@ const Page = () => {
 };
 
 export { Page };
+
+export const documentProps = {
+  title: "Frontend Mentor - Challenges",
+  description: "Collection of solutions for Front-end Mentor challenges.",
+  fonts: ["Roboto:wght@300", "Six+Caps"]
+};

@@ -12,7 +12,9 @@ import { fileURLToPath } from "url";
       await import("vite")
     ).createServer({
       root: `${dirname(fileURLToPath(import.meta.url))}/..`,
-      configFile: `${dirname(fileURLToPath(import.meta.url))}/../scripts/vite/vite.config.ts`,
+      configFile: `${dirname(
+        fileURLToPath(import.meta.url)
+      )}/../scripts/vite/vite.config.ts`,
       server: { middlewareMode: true }
     })
   ).middlewares;
@@ -29,10 +31,11 @@ import { fileURLToPath } from "url";
 
     if (!httpResponse) return next();
 
-    const { body, statusCode, contentType, earlyHints } = httpResponse;
+    const {
+      body, statusCode, contentType, earlyHints
+    } = httpResponse;
 
-    if (res.writeEarlyHints)
-      res.writeEarlyHints({ link: earlyHints.map((e) => e.earlyHintLink) });
+    if (res.writeEarlyHints) res.writeEarlyHints({ link: earlyHints.map((e) => e.earlyHintLink) });
 
     res.status(statusCode).type(contentType).send(body);
   });
@@ -40,4 +43,4 @@ import { fileURLToPath } from "url";
   app.listen(port);
 
   console.log(`Server running at http://localhost:${port}`);
-})();
+}());

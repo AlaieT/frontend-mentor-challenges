@@ -58,12 +58,13 @@ const Gallery = ({ challenges }: GalleryProps) => {
       <div id={styles.challenges}>
         {chunks?.map(({ chunk, key }) => (
           <div key={`chunk_${key}`} className={styles.chunk}>
-            {chunk.map(({ name, number, imgSrc }) => (
+            {chunk.map(({ name, number, imgSrc, link }) => (
               <Challenge
                 key={name}
                 name={name}
                 number={number}
                 imgSrc={imgSrc}
+                link={link}
               />
             ))}
           </div>

@@ -8,5 +8,5 @@
   "ts-node": {
     "esm": true
   },
-  "include": ["scripts/vite/vite.config.ts", "server/index.ts"]
+  "include": ["scripts/vite/vite.config.ts", "server/index.ts", "api/ssr.ts"]
 }
