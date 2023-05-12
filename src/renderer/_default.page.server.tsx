@@ -20,7 +20,7 @@ async function render(pageContext: PageContextServer) {
   const { documentProps } = pageContext.exports;
   const description = documentProps?.description || "Empty page";
   const title = documentProps?.title || "Empty page";
-  const fonts = documentProps?.fonts || [];
+  const fonts = documentProps?.fonts || "";
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">
@@ -29,7 +29,7 @@ async function render(pageContext: PageContextServer) {
         <link rel="icon" href="" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=${fonts.join("&family=")}&display=swap" rel="stylesheet">
+        <link href="${fonts}" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${description}" />
         <title>${title}</title>

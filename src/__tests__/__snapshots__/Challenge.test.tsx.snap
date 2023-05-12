@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Challenge correct render should match snapshot 1`] = `
+exports[`Header correct render should match snapshot 1`] = `
 <DocumentFragment>
-  <div
+  <a
     class="challenge"
+    href="https://some-link.com"
+    rel="noopener noreferrer"
+    target="_blank"
   >
-    <img
-      alt="preview Some challenge"
-      src="https://some-img.png"
-    />
+    <p>
+      test project
+    </p>
     <div
-      class="name"
+      class="arrow"
     >
-      <p>
-        Some challenge
-      </p>
-      <p>
-        000-
-      </p>
+      <div
+        height="24"
+        width="24"
+      />
     </div>
-  </div>
+  </a>
 </DocumentFragment>
 `;

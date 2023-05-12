@@ -1,149 +1,62 @@
-@import "../utils/mixins";
 @import "../utils/variables";
+@import "../utils/mixins.scss";
 
-@keyframes opacity-awake {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes opacity-up-awake {
-  0%,
-  50% {
-    opacity: 0;
-    transform: translateY(200%);
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes opacity-left-awake {
-  0%,
-  50% {
-    opacity: 0;
-    transform: translateX(200%);
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes scale-x-awake {
-  0%,
-  20% {
-    transform-origin: right;
-    transform: scaleX(0);
-  }
-
-  54% {
-    transform-origin: right;
-    transform: scaleX(1);
-  }
-
-  55% {
-    transform-origin: left;
-    transform: scaleX(1);
-  }
-
-  100% {
-    transform-origin: left;
-    transform: scaleX(0);
-  }
-}
-
-@keyframes scale-y-awake {
-  0% {
-    transform: scaleY(0);
-  }
-
-  100% {
-    transform: scaleY(1);
-  }
-}
-
-header {
-  width: 100%;
-  height: calc(100vh - 50px);
-  max-width: 1675px;
-  flex: none;
-
-  @include flex("space-between&start", "col");
-
-  & #credentials {
-    width: 100%;
+#header {
+  & #author {
+    margin: 0 0 50px;
     font-size: 12px;
-    list-style: none;
+    text-transform: capitalize;
 
     @include flex("space-between&center");
+  }
 
-    & li {
-      position: relative;
+  & #greetings {
+    & #title {
+      margin: 0 0 25px;
+      font-size: 96px;
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 100px;
+    }
 
-      &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: $prime-text-color;
-        transform: scaleX(0);
-        animation: 1500ms scale-x-awake cubic-bezier(0.36, 0, 0.34, 0.87);
+    & #description {
+      max-width: 640px;
+      margin: 0 0 25px;
+      font-size: 16px;
+      text-transform: uppercase;
+      line-height: 25px;
+    }
+
+    & #github {
+      width: max-content;
+      padding: 5px 10px;
+      border-radius: 10px;
+      color: $prime-background-color;
+      font-size: 14px;
+      background-color: $prime-text-color;
+
+      @include flex("center&center");
+
+      & svg {
+        margin: 0 5px;
+        fill: $prime-background-color;
       }
-    }
-
-    & p {
-      animation: 750ms opacity-awake step-end;
-    }
-  }
-
-  & #description {
-    width: 100%;
-    font-size: 18px;
-    list-style: none;
-
-    & li {
-      overflow: hidden;
-    }
-
-    & p {
-      margin: 0 0 10px;
-      animation: 2500ms opacity-up-awake cubic-bezier(0.36, 0, 0.34, 0.87);
-    }
-  }
-
-  & #scroll {
-    position: relative;
-    height: 200px;
-    margin-left: auto;
-    writing-mode: vertical-rl;
-    text-transform: uppercase;
-    overflow: hidden;
-
-    & p {
-      animation: 1000ms opacity-left-awake cubic-bezier(0.36, 0, 0.34, 0.87);
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      height: 100%;
-      border-right: 1px solid $prime-text-color;
-      transform-origin: top;
-      animation: 1000ms scale-y-awake cubic-bezier(0.36, 0, 0.34, 0.87);
     }
   }
 }
 
-@media (width <= 750px) {
-  header {
-    & #description {
-      font-size: 12px;
+@media (width < 640px) {
+  #header {
+    & #greetings {
+      & #title {
+        font-size: 24px;
+        line-height: 25px;
+      }
+
+      & #description {
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
   }
 }

@@ -1,7 +1,3 @@
-/**
- * Server
- */
-
 import type {
   PageContextBuiltIn,
   PageContextBuiltInClientWithServerRouting as PageContextBuiltInClient
@@ -16,7 +12,7 @@ export type PageContextCustom = {
     documentProps?: {
       title?: string;
       description?: string;
-      fonts?: string[];
+      fonts?: string;
     };
   };
 };
@@ -27,21 +23,7 @@ type PageContextClient = PageContextBuiltInClient<Page> & PageContextCustom;
 export type { PageContextServer };
 export type { PageContextClient };
 
-/**
- * Client
- */
 export interface ChallengeProps {
   name: string;
-  number: number;
-  imgSrc: string;
   link: string;
-}
-
-export interface GalleryProps {
-  challenges: Omit<ChallengeProps, "delay" | "disabled">[];
-}
-
-export interface TitleProps {
-  sentence: string;
-  delay: number;
 }

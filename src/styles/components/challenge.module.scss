@@ -1,42 +1,23 @@
-@import "../utils/mixins";
 @import "../utils/variables";
+@import "../utils/mixins";
 
 .challenge {
-  cursor: pointer;
+  padding: 20px 0;
+  font-size: 20px;
   text-transform: uppercase;
+  border-bottom: 1px solid $prime-text-color;
 
-  & img {
-    width: 100%;
-    display: block;
-    filter: grayscale(100%) opacity(0.25);
-    transition: $animation-transition;
-  }
+  @include flex("space-between&center");
 
-  & .name {
-    overflow: hidden;
-    width: 100%;
-    height: 25px;
-    margin: 5px 0 0;
-    font-size: 12px;
+  & .arrow {
+    padding: 5px;
+    border-radius: 100px;
+    background-color: $prime-text-color;
 
-    @include flex("space-between&start");
+    @include flex("center&center");
 
-    & p {
-      transition: $animation-transition;
-      transform: translateY(-100%);
-    }
-  }
-
-  &:hover {
-    & img {
-      filter: grayscale(0%) opacity(1);
-      opacity: 1;
-    }
-
-    & .name {
-      & p {
-        transform: translateY(0%);
-      }
+    & svg {
+      fill: $prime-background-color;
     }
   }
 }

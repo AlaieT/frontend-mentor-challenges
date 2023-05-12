@@ -24,6 +24,13 @@ html {
 div[id="root"] {
   padding: 25px;
   background-color: $prime-background-color;
+}
 
-  @include flex("center&center", "col");
+main {
+  margin: 50px 0 0;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
 }

@@ -24,13 +24,16 @@ module.exports = {
     "!**/node_modules/**",
     "!**/dist/**",
     "!**/__tests__/**",
-    "!**/server/**"
+    "!**/server/**",
+    "!**/pages/**",
+    "!**/api/**"
   ],
   modulePathIgnorePatterns: [
     "<rootDir>/src/challenges/*",
     "<rootDir>/src/utils/*",
     "<rootDir>/src/types.ts",
     "<rootDir>/src/renderer",
+    "<rootDir>/src/pages",
     "<rootDir>/scripts/vite/vite.config.ts"
   ]
 };

@@ -15,6 +15,11 @@
     align-items: center;
   }
 
+  @if $param == "start&end" {
+    justify-content: start;
+    align-items: end;
+  }
+
   @if $param == "end&center" {
     justify-content: end;
     align-items: center;
