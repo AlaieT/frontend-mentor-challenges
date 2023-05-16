@@ -23,7 +23,7 @@ function getChallengesAssets(source: string) {
 const config: UserConfig = {
   plugins: [
     viteStaticCopy({
-      targets: getChallengesAssets("./src/challenges")
+      targets: getChallengesAssets(path.resolve(__dirname, "/src/challenges"))
     }),
     svgr(),
     react(),
