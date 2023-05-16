@@ -24,7 +24,7 @@ const Header = () => (
           skills and gain experience creating websites.
         </p>
       </div>
-      <a id={styles.github} href="/" target="_blank" rel="noopener noreferrer">
+      <a id={styles.github} href="https://github.com/AlaieT/frontend-mentor-challenges" target="_blank" rel="noopener noreferrer">
         <GitHubIcon width={20} height={20} />
         GITHUB
         <ArrowIcon width={20} height={20} />
