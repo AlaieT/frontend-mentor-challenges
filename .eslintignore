@@ -4,3 +4,5 @@
 /**/__tests__
 /**/__mocks__
 /src/challenges
+/api
+/scripts
