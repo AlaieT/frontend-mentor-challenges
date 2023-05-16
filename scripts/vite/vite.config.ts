@@ -3,20 +3,22 @@ import ssr from "vite-plugin-ssr/plugin";
 import svgr from "vite-plugin-svgr";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import { readdirSync } from "fs";
+import path from "path";
 
 import type { UserConfig } from "vite";
 
-const getChallengesAssets = (source: string) =>
-  readdirSync(source, { withFileTypes: true })
+function getChallengesAssets(source: string) {
+  return readdirSync(source, { withFileTypes: true })
     .filter((dirent) => dirent.isDirectory())
     .map((dirent) => ({
       src: [
-        `./src/challenges/${dirent.name}/public/fonts`,
-        `./src/challenges/${dirent.name}/public/images`,
-        `./src/challenges/${dirent.name}/public/data`
+        path.resolve(__dirname, `/src/challenges/${dirent.name}/public/fonts`),
+        path.resolve(__dirname, `/src/challenges/${dirent.name}/public/images`),
+        path.resolve(__dirname, `/src/challenges/${dirent.name}/public/data`)
       ],
       dest: ""
     }));
+}
 
 const config: UserConfig = {
   plugins: [
