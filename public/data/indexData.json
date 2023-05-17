@@ -7,6 +7,10 @@
     {
       "name": "multi step form",
       "link": "https://frontend-mentor-challenges-livid.vercel.app/multiStepForm"
+    },
+    {
+      "name": "launch countdown timer",
+      "link": "https://frontend-mentor-challenges-livid.vercel.app/launchCountdownTimer"
     }
   ]
 }
