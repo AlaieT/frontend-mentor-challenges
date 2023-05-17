@@ -1,0 +1,13 @@
+{
+  "title": "WE'RE LAUNCHING SOON",
+  "deadline": "May 25, 2023",
+  "links": {
+    "facebook": "",
+    "pinterest": "",
+    "instagram": ""
+  },
+  "background": {
+    "starsImage": "/launch-countdown-timer/images/bg-stars.svg",
+    "hillsImage": "/launch-countdown-timer/images/pattern-hills.svg"
+  }
+}

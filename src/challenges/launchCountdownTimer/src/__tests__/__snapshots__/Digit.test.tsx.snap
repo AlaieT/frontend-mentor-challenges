@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Digit correct render should match snashot 1`] = `
+<DocumentFragment>
+  <div
+    class="digit"
+  >
+    <div
+      class="box"
+    >
+      <div
+        class="top"
+      >
+        <p>
+          24
+        </p>
+      </div>
+      <div
+        class="middle"
+      >
+        <div
+          class="front"
+        >
+          <p>
+            24
+          </p>
+        </div>
+        <div
+          class="back"
+        >
+          <p>
+            24
+          </p>
+        </div>
+      </div>
+      <div
+        class="bottom"
+      >
+        <p>
+          24
+        </p>
+      </div>
+    </div>
+    <div
+      class="label"
+    >
+      <p>
+        day
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
