@@ -2,15 +2,15 @@
   "challenges": [
     {
       "name": "result summary component",
-      "link": "https://frontend-mentor-challenges-livid.vercel.app/resultsSummaryComponent"
+      "link": "/resultsSummaryComponent"
     },
     {
       "name": "multi step form",
-      "link": "https://frontend-mentor-challenges-livid.vercel.app/multiStepForm"
+      "link": "/multiStepForm"
     },
     {
       "name": "launch countdown timer",
-      "link": "https://frontend-mentor-challenges-livid.vercel.app/launchCountdownTimer"
+      "link": "/launchCountdownTimer"
     }
   ]
 }

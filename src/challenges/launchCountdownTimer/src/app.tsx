@@ -28,7 +28,6 @@ function App() {
 
   return pageData ? (
     <LaunchCountdownTimer
-      background={pageData.background}
       deadline={pageData.deadline}
       links={pageData.links}
       title={pageData.title}

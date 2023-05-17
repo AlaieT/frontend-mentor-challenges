@@ -6,10 +6,6 @@ export interface LaunchCountdownTimerProps {
     pinterest: string;
     instagram: string;
   };
-  background: {
-    starsImage: string;
-    hillsImage: string;
-  };
 }
 
 export interface TimerProps {
