@@ -1,0 +1,46 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.input {
+  & .badges {
+    margin: 0 0 8px;
+
+    @include flex("space-between&center");
+
+    & label:nth-child(2) {
+      color: red;
+    }
+  }
+
+  & input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    color: $primary-text-color;
+    font-weight: 700;
+    border-radius: 8px;
+    border: 1px solid $secondary-text-color;
+
+    &.error {
+      border: 1px solid $error;
+    }
+
+    &:focus {
+      border: 1px solid $select-input;
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .input {
+    & .badges {
+      font-size: 14px;
+    }
+
+    & input {
+      height: 40px;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+  }
+}
