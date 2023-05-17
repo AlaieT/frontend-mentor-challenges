@@ -1,0 +1,209 @@
+@import "../../utils/variables";
+@import "../../utils/mixins";
+
+#content {
+  width: 100%;
+
+  & #header {
+    width: 100%;
+    margin: 0 0 40px;
+    grid-area: A;
+
+    & h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    & h2 {
+      color: $secondary-text-color;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 25px;
+    }
+  }
+
+  & #info {
+    padding: 16px 24px 24px;
+    background-color: $select-plan;
+    border-radius: 8px;
+    grid-area: B;
+
+    & #plan {
+      padding: 0 0 22px;
+      border-bottom: 1px solid $shadow-color;
+      display: grid;
+      grid-template-areas:
+        "A C"
+        "B C";
+      justify-content: space-between;
+      align-items: center;
+
+      & p:first-child {
+        margin: 0 0 8px;
+        font-weight: 500;
+        text-transform: capitalize;
+        grid-area: A;
+      }
+
+      & #change_plan {
+        cursor: pointer;
+        width: max-content;
+        height: max-content;
+        padding: 0;
+        background: none;
+        color: $secondary-text-color;
+        font-size: 14px;
+        line-height: 20px;
+        text-decoration: underline;
+
+        &:hover {
+          color: $select-input;
+        }
+
+        grid-area: B;
+      }
+
+      & p:last-child {
+        font-weight: 600;
+        grid-area: C;
+      }
+    }
+
+    & .add_ons {
+      margin: 20px 0;
+      color: $secondary-text-color;
+      font-size: 14px;
+      line-height: 20px;
+
+      & span {
+        &:last-child {
+          color: $primary-text-color;
+        }
+      }
+
+      &:last-child {
+        margin: 20px 0 0;
+      }
+
+      @include flex("space-between&center");
+    }
+  }
+
+  & #total {
+    padding: 0 24px;
+    margin: 24px 0 0;
+    line-height: 20px;
+    grid-area: C;
+
+    @include flex("space-between&center");
+
+    & span:first-child {
+      color: $secondary-text-color;
+      font-size: 14px;
+    }
+
+    & span:last-child {
+      color: $select-input;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}
+
+#controls {
+  width: 100%;
+
+  @include flex("space-between&center");
+
+  & #go_back {
+    width: max-content;
+    padding-left: 0;
+    padding-right: 0;
+    color: $secondary-text-color;
+    background: transparent;
+  }
+
+  & #next_step {
+    width: 124px;
+    background-color: $select-input;
+
+    &:disabled,
+    &:hover {
+      background-color: $summary-hover-button;
+    }
+
+    &:disabled {
+      pointer-events: none;
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  #content {
+    width: calc(100% - 32px);
+    min-width: 311px;
+    padding: 32px 24px;
+    margin: 0 0 159px;
+    border-radius: 8px;
+    background-color: $background-white;
+    box-shadow: $content-box-shadow;
+
+    & #header {
+      margin: 0 0 22px;
+
+      & h1 {
+        font-size: 24px;
+      }
+    }
+
+    & #info {
+      padding: 16px;
+
+      & #plan {
+        padding: 0 0 12px;
+        border-bottom: 1px solid $shadow-color;
+        display: grid;
+        grid-template-areas:
+          "A C"
+          "B C";
+        justify-content: space-between;
+        align-items: center;
+        
+        & p {
+          &:first-child {
+            margin: 0 0 3px;
+            font-size: 14px;
+          }
+
+          &:nth-child(3) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      & .add_ons {
+        margin: 12px 0;
+
+        &:last-child {
+          margin: 12px 0 0;
+        }
+      }
+    }
+
+    & #total {
+      padding: 0 18px;
+      margin: 22px 0 0;
+
+      & span:last-child {
+        font-size: 16px;
+      }
+    }
+  }
+
+  #controls {
+    height: 72px;
+    padding: 0 16px;
+    background-color: $background-white;
+  }
+}

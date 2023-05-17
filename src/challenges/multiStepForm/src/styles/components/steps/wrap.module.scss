@@ -1,0 +1,16 @@
+@import "../../utils/mixins";
+
+#step {
+  width: 100%;
+  height: 100%;
+  padding: 42px 100px 16px 84px;
+
+  @include flex("space-between&center", "col");
+}
+
+@media screen and (max-width: 940px) {
+  #step {
+    min-width: 375px;
+    padding: 0px;
+  }
+}
