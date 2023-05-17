@@ -4,6 +4,8 @@ import MultiStepForm from "./components/MultiStepForm";
 
 import type { MultiStepFormProps } from "./types";
 
+import "./styles/global.scss";
+
 const App = () => {
   const [pageProps, setPageProps] = useState<null | MultiStepFormProps>(null);
 
