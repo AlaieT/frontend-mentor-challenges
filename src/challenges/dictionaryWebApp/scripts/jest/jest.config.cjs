@@ -5,6 +5,7 @@ module.exports = {
   restoreMocks: true,
   rootDir: "../../",
   collectCoverage: true,
+  testEnvironment: "jsdom",
   coverageProvider: "v8",
   collectCoverageFrom: [
     "**/*.{ts,tsx}",

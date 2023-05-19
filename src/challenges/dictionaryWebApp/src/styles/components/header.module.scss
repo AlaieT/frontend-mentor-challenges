@@ -1,0 +1,18 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+
+#header {
+  width: 100%;
+
+  @include flex("center&center");
+
+  #controls {
+    @include flex("space-between&center");
+
+    #font {
+    }
+
+    #mode {
+    }
+  }
+}
