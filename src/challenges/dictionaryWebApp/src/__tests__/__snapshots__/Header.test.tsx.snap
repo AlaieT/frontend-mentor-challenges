@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header correct render should match snapshot with font change window 1`] = `
+<DocumentFragment>
+  <header
+    id="header"
+  >
+    <div
+      height="36.5"
+      width="32"
+    />
+    <div
+      id="controls"
+    >
+      <div
+        class="light"
+        id="font"
+      >
+        <div
+          id="current-font"
+        >
+          <p>
+            Sans Serif
+          </p>
+          <div
+            height="6"
+            width="12"
+          />
+        </div>
+        <ul
+          id="select-font"
+        >
+          <li
+            class="inter"
+          >
+            Sans Serif
+          </li>
+          <li
+            class="lora"
+          >
+            Serif
+          </li>
+          <li
+            class="inconsolata"
+          >
+            Mono
+          </li>
+        </ul>
+      </div>
+      <span />
+      <div
+        id="mode"
+      >
+        <label
+          for="change-mode"
+          id="switch"
+        >
+          <input
+            id="change-mode"
+            type="checkbox"
+          />
+          <span
+            class="slider"
+          />
+        </label>
+        <div
+          data-color="light"
+          height="20"
+          id="moon-icon"
+          width="20"
+        />
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Header correct render should match snapshot without font change window 1`] = `
+<DocumentFragment>
+  <header
+    id="header"
+  >
+    <div
+      height="36.5"
+      width="32"
+    />
+    <div
+      id="controls"
+    >
+      <div
+        class="light"
+        id="font"
+      >
+        <div
+          id="current-font"
+        >
+          <p>
+            Sans Serif
+          </p>
+          <div
+            height="6"
+            width="12"
+          />
+        </div>
+      </div>
+      <span />
+      <div
+        id="mode"
+      >
+        <label
+          for="change-mode"
+          id="switch"
+        >
+          <input
+            id="change-mode"
+            type="checkbox"
+          />
+          <span
+            class="slider"
+          />
+        </label>
+        <div
+          data-color="light"
+          height="20"
+          id="moon-icon"
+          width="20"
+        />
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;

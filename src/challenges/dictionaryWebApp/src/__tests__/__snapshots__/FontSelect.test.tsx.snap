@@ -3,6 +3,7 @@
 exports[`FontsSelect correct render should correct render with window for font selection 1`] = `
 <DocumentFragment>
   <div
+    class="light"
     id="font"
   >
     <div
@@ -17,16 +18,21 @@ exports[`FontsSelect correct render should correct render with window for font s
       />
     </div>
     <ul
-      hidden=""
       id="select-font"
     >
-      <li>
+      <li
+        class="inter"
+      >
         Sans Serif
       </li>
-      <li>
+      <li
+        class="lora"
+      >
         Serif
       </li>
-      <li>
+      <li
+        class="inconsolata"
+      >
         Mono
       </li>
     </ul>
@@ -37,6 +43,7 @@ exports[`FontsSelect correct render should correct render with window for font s
 exports[`FontsSelect correct render should correct render without window for font selection 1`] = `
 <DocumentFragment>
   <div
+    class="light"
     id="font"
   >
     <div
@@ -50,19 +57,6 @@ exports[`FontsSelect correct render should correct render without window for fon
         width="12"
       />
     </div>
-    <ul
-      id="select-font"
-    >
-      <li>
-        Sans Serif
-      </li>
-      <li>
-        Serif
-      </li>
-      <li>
-        Mono
-      </li>
-    </ul>
   </div>
 </DocumentFragment>
 `;

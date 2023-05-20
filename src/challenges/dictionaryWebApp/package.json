@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "vite -c ./scripts/vite/vite.config.ts",
+    "build": "tsc && vite build -c ./scripts/vite/vite.config.ts",
     "lint": "eslint src --ext ts,tsx",
+    "lint:fix": "eslint src --ext ts,tsx --fix",
     "style": "stylelint **/*.scss",
     "preview": "vite preview",
     "test": "jest -c ./scripts/jest/jest.config.cjs"

@@ -4,15 +4,16 @@
 #header {
   width: 100%;
 
-  @include flex("center&center");
+  @include flex("space-between&center");
 
   #controls {
     @include flex("space-between&center");
 
-    #font {
-    }
+    column-gap: 26px;
 
-    #mode {
+    & span {
+      height: 32px;
+      border-left: 1px solid $border-color-light;
     }
   }
 }

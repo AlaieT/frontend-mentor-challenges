@@ -1,0 +1,63 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+
+#font {
+  position: relative;
+  font-size: 18px;
+  font-weight: 700;
+
+  & .inter {
+    font-family: Inter, sans-serif;
+  }
+
+  & .lora {
+    font-family: Lora, serif;
+  }
+
+  & .inconsolata {
+    font-family: Inconsolata, monospace;
+  }
+
+  & #current-font {
+    cursor: pointer;
+
+    @include flex("center&center");
+
+    column-gap: 18px;
+  }
+
+  & #select-font {
+    position: absolute;
+    right: 0;
+    width: 159px;
+    padding: 24px 0 24px 24px;
+    background-color: $background-color-light;
+    box-shadow: $box-shadow-light;
+    border-radius: 16px;
+    list-style: none;
+
+    & .inter,
+    .lora {
+      margin: 0 0 16px;
+    }
+
+    & .inter,
+    .lora,
+    .inconsolata {
+      cursor: pointer;
+
+      &:hover {
+        color: $text-color-highlight;
+      }
+    }
+  }
+
+  &.dark {
+    color: $text-color-dark;
+    
+    & #select-font {
+      background-color: $background-color-dark;
+      box-shadow: $box-shadow-dark;
+    }
+  }
+}

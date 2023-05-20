@@ -1,0 +1,62 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+
+#mode {
+  width: 80px;
+  height: 20px;
+
+  @include flex("space-between&center");
+
+  #switch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+
+    & #change-mode {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    & .slider {
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: $text-color-desc;
+      border-radius: 10px;
+      transition: 0.2s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 14px;
+        width: 14px;
+        left: 3px;
+        bottom: 3px;
+        background-color: $background-color-light;
+        border-radius: 50%;
+        transition: 0.2s;
+      }
+    }
+
+    & #change-mode:checked + .slider,
+    #change-mode:hover + .slider {
+      background-color: $text-color-highlight;
+    }
+
+    & #change-mode:checked + .slider::before {
+      transform: translateX(20px);
+    }
+  }
+
+  & #moon-icon {
+    &.dark {
+      & path {
+        stroke: $text-color-highlight;
+      }
+    }
+  }
+}
