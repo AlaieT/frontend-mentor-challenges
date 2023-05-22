@@ -1,0 +1,56 @@
+@import "../utils/mixin";
+@import "../utils/variables";
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 58px 0 128px;
+
+  &.dark {
+    background-color: $background-color-dark;
+
+    #not-found {
+      color: $text-color-dark;
+    }
+  }
+
+  &.sans-serif {
+    font-family: Inter, sans-serif;
+
+    & h2 {
+      font-style: italic;
+    }
+  }
+
+  &.serif {
+    font-family: Lora, serif;
+  }
+
+  &.mono {
+    font-family: Inconsolata, monospace;
+  }
+
+  & #meanings {
+    margin: 42px 0 0;
+  }
+
+  & #not-found {
+    margin: 132px 0 0;
+    font-size: 64px;
+
+    @include flex("center&center", "col");
+
+    & h2 {
+      margin: 44px 0 24px;
+      font-size: 20px;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    & p {
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+}

@@ -33,9 +33,35 @@ export interface WordDefinition {
     partOfSpeech: string;
     definitions: {
       definition: string;
+      example?: string;
     }[];
     synonyms: string[];
     antonyms: string[];
   }[];
   sourceUrls: string[];
+}
+
+export interface BadResponse {
+  title: string;
+  message: string;
+  resolution: string;
+}
+
+export interface SearchProps {
+  value?: string;
+  mode: Modes;
+  url: string;
+  callback?: (result: WordDefinition[] | null) => void;
+}
+
+export interface DefinitionProps {
+  redirectSearch: (value: string) => void;
+  mode: Modes;
+  partOfSpeech: string;
+  definitions: {
+    definition: string;
+    example?: string;
+  }[];
+  synonyms: string[];
+  antonyms: string[];
 }

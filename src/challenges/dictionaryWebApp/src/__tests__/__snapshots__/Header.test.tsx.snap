@@ -64,7 +64,7 @@ exports[`Header correct render should match snapshot with font change window 1`]
           />
         </label>
         <div
-          data-color="light"
+          class="light"
           height="20"
           id="moon-icon"
           width="20"
@@ -120,7 +120,7 @@ exports[`Header correct render should match snapshot without font change window 
           />
         </label>
         <div
-          data-color="light"
+          class="light"
           height="20"
           id="moon-icon"
           width="20"

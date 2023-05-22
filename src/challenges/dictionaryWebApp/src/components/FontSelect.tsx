@@ -32,7 +32,7 @@ const FontSelect = ({ callback = () => undefined, font, mode }: FontSelectProps)
           >
             Sans Serif
           </li>
-          <li 
+          <li
             className={styles.lora}
             onClick={() => handleSetFont("Serif")}
           >

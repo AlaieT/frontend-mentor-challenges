@@ -9,6 +9,11 @@
     justify-content: center;
     align-items: center;
   }
+  
+  @if $param == "start&center" {
+    justify-content: flex-start;
+    align-items: center;
+  }
 
   @if $param == "space-between&center" {
     justify-content: space-between;

@@ -18,7 +18,7 @@ exports[`ModeChange correct render should match snapshot 1`] = `
       />
     </label>
     <div
-      data-color="light"
+      class="light"
       height="20"
       id="moon-icon"
       width="20"
