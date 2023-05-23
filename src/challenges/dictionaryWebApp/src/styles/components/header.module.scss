@@ -3,6 +3,7 @@
 
 #header {
   width: 100%;
+  max-width: 736px;
 
   @include flex("space-between&center");
 
@@ -11,7 +12,7 @@
 
     column-gap: 26px;
 
-    & span {
+    & #separate {
       height: 32px;
       border-left: 1px solid $border-color-light;
     }

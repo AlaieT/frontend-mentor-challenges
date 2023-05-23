@@ -7,7 +7,6 @@ exports[`Definition correct render should match snapshot 1`] = `
   >
     <h2>
       noun
-      <span />
     </h2>
     <div
       class="meanings"

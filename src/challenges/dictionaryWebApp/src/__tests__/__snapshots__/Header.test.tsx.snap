@@ -47,7 +47,9 @@ exports[`Header correct render should match snapshot with font change window 1`]
           </li>
         </ul>
       </div>
-      <span />
+      <span
+        id="separate"
+      />
       <div
         id="mode"
       >
@@ -103,7 +105,9 @@ exports[`Header correct render should match snapshot without font change window 
           />
         </div>
       </div>
-      <span />
+      <span
+        id="separate"
+      />
       <div
         id="mode"
       >

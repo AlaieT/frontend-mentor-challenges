@@ -25,7 +25,9 @@ describe("Definition", () => {
   describe("correct render", () => {
     it("should match snapshot", () => {
       expect(
-        render(<Definition mode="light" {...props} />).asFragment()
+        render(
+          <Definition redirectSearch={jest.fn()} mode="light" {...props} />
+        ).asFragment()
       ).toMatchSnapshot();
     });
   });

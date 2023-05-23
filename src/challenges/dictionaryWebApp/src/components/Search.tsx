@@ -24,6 +24,7 @@ const Search = ({
 
       if (inputRef.current?.value) {
         if (isError) setError(false);
+        if (window) window.scrollTo({ top: 0, behavior: "auto" });
 
         setSearch(true);
 
@@ -47,6 +48,8 @@ const Search = ({
 
   React.useEffect(() => {
     if (value && inputRef.current) {
+      if (window) window.scrollTo({ top: 0, behavior: "auto" });
+
       inputRef.current.value = value;
 
       setSearch(true);

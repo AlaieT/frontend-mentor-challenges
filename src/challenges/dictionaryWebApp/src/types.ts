@@ -55,7 +55,7 @@ export interface SearchProps {
 }
 
 export interface DefinitionProps {
-  redirectSearch: (value: string) => void;
+  redirectSearch?: (value: string) => void;
   mode: Modes;
   partOfSpeech: string;
   definitions: {
@@ -64,4 +64,8 @@ export interface DefinitionProps {
   }[];
   synonyms: string[];
   antonyms: string[];
+}
+
+export interface AudioProps {
+  src?: string;
 }

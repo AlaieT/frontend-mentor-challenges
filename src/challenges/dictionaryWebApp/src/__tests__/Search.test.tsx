@@ -9,6 +9,8 @@ import {
 
 import Search from "../components/Search";
 
+window.scrollTo = jest.fn();
+
 afterEach(() => cleanup());
 
 describe("Search", () => {

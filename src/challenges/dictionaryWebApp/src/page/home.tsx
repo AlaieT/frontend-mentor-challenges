@@ -3,9 +3,12 @@ import React from "react";
 import Header from "../components/Header";
 import Search from "../components/Search";
 import Definition from "../components/Definition";
+import Audio from "../components/Audio";
 import classNames from "../utils/classNames";
 
 import type { Fonts, Modes, WordDefinition, BadResponse } from "../types";
+
+import { ReactComponent as NewWindowIcon } from "../assets/images/icon-new-window.svg";
 
 import styles from "../styles/pages/home.module.scss";
 
@@ -27,7 +30,15 @@ const Home = () => {
   const handleSetDefinition = React.useCallback(
     (value: any) => {
       if (value) {
-        if (isDefinition(value[0])) setDefinition(value[0]);
+        if (isDefinition(value[0])) {
+          const phonetics = value[0].phonetics.filter(
+            (item) => !!(item.audio && item.text)
+          );
+
+          if (phonetics.length > 0) value[0].phonetics = phonetics;
+
+          setDefinition(value[0]);
+        }
         if (isBadResponse(value)) setDefinition(value);
       } else setDefinition(null);
     },
@@ -57,6 +68,13 @@ const Home = () => {
         />
         {isDefinition(definition) && (
           <>
+            <div id={styles.word}>
+              <div id={styles.text}>
+                <p>{definition.word}</p>
+                <p>{definition.phonetics[0].text || ""}</p>
+              </div>
+              <Audio src={definition.phonetics[0].audio} />
+            </div>
             <div id={styles.meanings}>
               {definition.meanings.map((item) => (
                 <Definition
@@ -69,6 +87,17 @@ const Home = () => {
                   antonyms={item.antonyms}
                 />
               ))}
+            </div>
+            <div id={styles.source}>
+              <p>Source</p>
+              <a
+                href={definition.sourceUrls[0]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {definition.sourceUrls}
+                <NewWindowIcon width={12} height={12} />
+              </a>
             </div>
           </>
         )}

@@ -19,7 +19,7 @@ const Header = ({
     <LogoIcon width={32} height={36.5} />
     <div id={styles.controls}>
       <FontSelect callback={handleFont} font={font} mode={mode} />
-      <span />
+      <span id={styles.separate} />
       <ModeChange callback={handleMode} mode={mode} />
     </div>
   </header>

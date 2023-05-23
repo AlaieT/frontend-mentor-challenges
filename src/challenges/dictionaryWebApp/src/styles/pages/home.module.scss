@@ -6,11 +6,14 @@
   min-height: 100vh;
   padding: 58px 0 128px;
 
+  @include flex("start&center", "col");
+
   &.dark {
     background-color: $background-color-dark;
+    color: $text-color-dark;
 
-    #not-found {
-      color: $text-color-dark;
+    #source {
+      border-color: $border-color-dark;
     }
   }
 
@@ -28,6 +31,30 @@
 
   &.mono {
     font-family: Inconsolata, monospace;
+  }
+
+  & main {
+    width: 100%;
+    max-width: 736px;
+  }
+
+  & #word {
+    margin: 52px 0 0;
+
+    @include flex("space-between&center");
+
+    & #text {
+      & p:first-child {
+        margin: 0 0 11px;
+        font-size: 64px;
+      }
+
+      & p:last-child {
+        font-size: 24px;
+        color: $text-color-highlight;
+        font-family: Inter, sans-serif;
+      }
+    }
   }
 
   & #meanings {
@@ -51,6 +78,31 @@
       font-size: 18px;
       line-height: 24px;
       text-align: center;
+    }
+  }
+
+  & #source {
+    min-height: 36px;
+    border-top: 1px solid;
+    border-color: $border-color-light;
+    font-size: 14px;
+
+    @include flex("start&end");
+
+    flex-wrap: wrap;
+
+    & p {
+      margin: 0 25px 0 0;
+      color: $text-color-desc;
+      text-decoration: underline;
+    }
+
+    & a {
+      color: inherit;
+
+      & svg {
+        margin: 0 0 0 8px;
+      }
     }
   }
 }
