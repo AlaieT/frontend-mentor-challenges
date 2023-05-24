@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import classNames from "../utils/classNames";
 
@@ -7,7 +8,6 @@ import type { DefinitionProps } from "../types";
 import styles from "../styles/components/definition.module.scss";
 
 const Definition = ({
-  redirectSearch,
   mode,
   partOfSpeech,
   definitions,
@@ -43,8 +43,8 @@ const Definition = ({
         <h3>Synonyms</h3>
         <ul>
           {synonyms.map((synonym) => (
-            <li key={synonym} onClick={() => redirectSearch(synonym)}>
-              {synonym}
+            <li key={synonym}>
+              <NavLink to={`/${synonym}`}>{synonym}</NavLink>
             </li>
           ))}
         </ul>
@@ -55,8 +55,8 @@ const Definition = ({
         <h3>Antonyms</h3>
         <ul>
           {antonyms.map((antonym) => (
-            <li key={antonym} onClick={() => redirectSearch(antonym)}>
-              {antonym}
+            <li key={antonym}>
+              <NavLink to={`/${antonym}`}>{antonym}</NavLink>
             </li>
           ))}
         </ul>

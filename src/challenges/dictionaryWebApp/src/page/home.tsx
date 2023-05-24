@@ -20,9 +20,6 @@ const isBadResponse = (value: unknown): value is BadResponse =>
 const Home = () => {
   const [font, setFont] = React.useState<Fonts>("Sans Serif");
   const [mode, setMode] = React.useState<Modes>("light");
-  const [searchValue, setSearchValue] = React.useState<string | undefined>(
-    undefined
-  );
   const [definition, setDefinition] = React.useState<
     WordDefinition | BadResponse | null
   >(null);
@@ -61,7 +58,6 @@ const Home = () => {
       />
       <main>
         <Search
-          value={searchValue}
           mode={mode}
           url="https://api.dictionaryapi.dev/api/v2/entries/en/"
           callback={handleSetDefinition}
@@ -76,10 +72,9 @@ const Home = () => {
               <Audio src={definition.phonetics[0].audio} />
             </div>
             <div id={styles.meanings}>
-              {definition.meanings.map((item) => (
+              {definition.meanings.map((item, idx) => (
                 <Definition
-                  key={item.partOfSpeech}
-                  redirectSearch={setSearchValue}
+                  key={`${item.partOfSpeech}_${idx}`}
                   mode={mode}
                   partOfSpeech={item.partOfSpeech}
                   definitions={item.definitions}

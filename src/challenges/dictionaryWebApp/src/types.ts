@@ -48,14 +48,12 @@ export interface BadResponse {
 }
 
 export interface SearchProps {
-  value?: string;
   mode: Modes;
   url: string;
   callback?: (result: WordDefinition[] | null) => void;
 }
 
 export interface DefinitionProps {
-  redirectSearch?: (value: string) => void;
   mode: Modes;
   partOfSpeech: string;
   definitions: {

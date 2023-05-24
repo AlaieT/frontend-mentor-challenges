@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import classNames from "../utils/classNames";
 
@@ -8,12 +9,9 @@ import { ReactComponent as SearchIcon } from "../assets/images/icon-search.svg";
 
 import styles from "../styles/components/search.module.scss";
 
-const Search = ({
-  value,
-  mode,
-  url,
-  callback = () => undefined
-}: SearchProps) => {
+const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const inputRef = React.useRef<HTMLInputElement>(null);
   const [isError, setError] = React.useState(false);
   const [isSearch, setSearch] = React.useState(false);
@@ -24,48 +22,34 @@ const Search = ({
 
       if (inputRef.current?.value) {
         if (isError) setError(false);
-        if (window) window.scrollTo({ top: 0, behavior: "auto" });
 
-        setSearch(true);
-
-        fetch(url + inputRef.current.value, { method: "GET" })
-          .then((response) => response.json())
-          .then((result) => {
-            setSearch(false);
-            callback(result);
-          })
-          .catch(() => {
-            setSearch(false);
-            callback(null);
-          });
+        navigate(`/${inputRef.current?.value}`);
       } else {
         setError(true);
         callback(null);
       }
     },
-    [url, isError, callback]
+    [isError, callback, navigate]
   );
 
   React.useEffect(() => {
-    if (value && inputRef.current) {
-      if (window) window.scrollTo({ top: 0, behavior: "auto" });
+    const pathname = location.pathname.split("/")[1];
 
-      inputRef.current.value = value;
+    if (inputRef.current && pathname) {
+      inputRef.current.value = pathname;
 
       setSearch(true);
 
-      fetch(url + value, { method: "GET" })
+      fetch(url + pathname, { method: "GET" })
         .then((response) => response.json())
-        .then((result) => {
+        .then((result) => callback(result))
+        .catch(() => callback(null))
+        .finally(() => {
+          window.scrollTo({ top: 0, behavior: "auto" });
           setSearch(false);
-          callback(result);
-        })
-        .catch(() => {
-          setSearch(false);
-          callback(null);
         });
     }
-  }, [value, url, callback]);
+  }, [url, callback, location]);
 
   return (
     <form id={styles["search-form"]} onSubmit={handleSubmit}>
