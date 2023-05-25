@@ -8,13 +8,11 @@ import styles from "../styles/components/modeChange.module.scss";
 
 const ModeChange = ({ callback = () => undefined, mode }: ModeChangeProps) => (
   <div id={styles.mode}>
-    <label id={styles.switch} htmlFor={styles["change-mode"]}>
+    <label id={styles.switch} htmlFor={styles["mode-change"]}>
       <input
-        id={styles["change-mode"]}
+        id={styles["mode-change"]}
         type="checkbox"
-        onChange={(e) => {
-          callback(e.target.checked ? "dark" : "light");
-        }}
+        onChange={(e) => callback(e.target.checked ? "dark" : "light")}
       />
       <span className={styles.slider} />
     </label>
@@ -22,7 +20,7 @@ const ModeChange = ({ callback = () => undefined, mode }: ModeChangeProps) => (
       width={20}
       height={20}
       id={styles["moon-icon"]}
-      className={styles[mode]}
+      className={mode === "dark" ? styles[mode] : undefined}
     />
   </div>
 );

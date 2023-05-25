@@ -12,7 +12,7 @@
     width: 40px;
     height: 20px;
 
-    & #change-mode {
+    & #mode-change {
       opacity: 0;
       width: 0;
       height: 0;
@@ -27,7 +27,7 @@
       left: 0;
       background-color: $text-color-desc;
       border-radius: 10px;
-      transition: 0.2s;
+      transition: 0.2s ease-in-out;
 
       &::before {
         content: "";
@@ -38,16 +38,16 @@
         bottom: 3px;
         background-color: $background-color-light;
         border-radius: 50%;
-        transition: 0.2s;
+        transition: 0.2s ease-in-out;
       }
     }
 
-    & #change-mode:checked + .slider,
-    #change-mode:hover + .slider {
+    & #mode-change:checked + .slider,
+    #mode-change:hover + .slider {
       background-color: $text-color-highlight;
     }
 
-    & #change-mode:checked + .slider::before {
+    & #mode-change:checked + .slider::before {
       transform: translateX(20px);
     }
   }

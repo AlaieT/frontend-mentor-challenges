@@ -6,11 +6,22 @@
   font-size: 18px;
   font-weight: 700;
 
+  & button {
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
   & .inter {
+    margin: 0 0 16px;
     font-family: Inter, sans-serif;
   }
 
   & .lora {
+    margin: 0 0 16px;
     font-family: Lora, serif;
   }
 
@@ -18,16 +29,27 @@
     font-family: Inconsolata, monospace;
   }
 
+  & .inter,
+  .lora,
+  .inconsolata {
+    &:hover {
+      color: $text-color-highlight;
+    }
+  }
+
   & #current-font {
     cursor: pointer;
 
     @include flex("center&center");
 
-    column-gap: 18px;
+    & p {
+      margin: 0 18px 0 0;
+    }
   }
 
   & #select-font {
     position: absolute;
+    top: calc(100% + 17px);
     right: 0;
     width: 159px;
     padding: 24px 0 24px 24px;
@@ -35,26 +57,11 @@
     box-shadow: $box-shadow-light;
     border-radius: 16px;
     list-style: none;
-
-    & .inter,
-    .lora {
-      margin: 0 0 16px;
-    }
-
-    & .inter,
-    .lora,
-    .inconsolata {
-      cursor: pointer;
-
-      &:hover {
-        color: $text-color-highlight;
-      }
-    }
   }
 
   &.dark {
     color: $text-color-dark;
-    
+
     & #select-font {
       background-color: $background-color-dark;
       box-shadow: $box-shadow-dark;
