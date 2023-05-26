@@ -56,7 +56,7 @@ const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
       <div
         id={styles.search}
         className={classNames({
-          [styles[mode]]: mode === "dark",
+          [styles.dark]: mode === "dark",
           [styles.error]: isError,
           [styles.search]: isSearch
         })}

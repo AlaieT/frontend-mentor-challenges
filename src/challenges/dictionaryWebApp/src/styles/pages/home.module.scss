@@ -4,7 +4,7 @@
 #content {
   width: 100%;
   min-height: 100vh;
-  padding: 58px 0 128px;
+  padding: 58px 40px 128px;
 
   @include flex("start&center", "col");
 
@@ -47,6 +47,7 @@
       & p:first-child {
         margin: 0 0 11px;
         font-size: 64px;
+        font-weight: 700;
       }
 
       & p:last-child {
@@ -83,11 +84,12 @@
 
   & #source {
     min-height: 36px;
+    padding: 21px 0 0;
     border-top: 1px solid;
     border-color: $border-color-light;
     font-size: 14px;
 
-    @include flex("start&end");
+    @include flex("");
 
     flex-wrap: wrap;
 
@@ -102,6 +104,36 @@
 
       & svg {
         margin: 0 0 0 8px;
+      }
+    }
+  }
+}
+
+@media (width < 738px) {
+  #content {
+    padding: 24px 24px 85px;
+
+    & #meanings {
+      margin: 32px 0 0;
+    }
+
+    & #word {
+      margin: 24px 0 0;
+
+      & #text {
+        & p:first-child {
+          font-size: 32px;
+        }
+
+        & p:last-child {
+          font-size: 18px;
+        }
+      }
+    }
+
+    #source {
+      & p {
+        margin: 0 25px 8px 0;
       }
     }
   }

@@ -13,10 +13,9 @@ exports[`Header correct render should match snapshot with font change window 1`]
       id="controls"
     >
       <div
-        class="light"
         id="font"
       >
-        <div
+        <button
           id="current-font"
         >
           <p>
@@ -26,24 +25,30 @@ exports[`Header correct render should match snapshot with font change window 1`]
             height="6"
             width="12"
           />
-        </div>
+        </button>
         <ul
           id="select-font"
         >
-          <li
-            class="inter"
-          >
-            Sans Serif
+          <li>
+            <button
+              class="inter"
+            >
+              Sans Serif
+            </button>
           </li>
-          <li
-            class="lora"
-          >
-            Serif
+          <li>
+            <button
+              class="lora"
+            >
+              Serif
+            </button>
           </li>
-          <li
-            class="inconsolata"
-          >
-            Mono
+          <li>
+            <button
+              class="inconsolata"
+            >
+              Mono
+            </button>
           </li>
         </ul>
       </div>
@@ -54,11 +59,11 @@ exports[`Header correct render should match snapshot with font change window 1`]
         id="mode"
       >
         <label
-          for="change-mode"
+          for="mode-change"
           id="switch"
         >
           <input
-            id="change-mode"
+            id="mode-change"
             type="checkbox"
           />
           <span
@@ -66,7 +71,6 @@ exports[`Header correct render should match snapshot with font change window 1`]
           />
         </label>
         <div
-          class="light"
           height="20"
           id="moon-icon"
           width="20"
@@ -90,10 +94,9 @@ exports[`Header correct render should match snapshot without font change window 
       id="controls"
     >
       <div
-        class="light"
         id="font"
       >
-        <div
+        <button
           id="current-font"
         >
           <p>
@@ -103,7 +106,7 @@ exports[`Header correct render should match snapshot without font change window 
             height="6"
             width="12"
           />
-        </div>
+        </button>
       </div>
       <span
         id="separate"
@@ -112,11 +115,11 @@ exports[`Header correct render should match snapshot without font change window 
         id="mode"
       >
         <label
-          for="change-mode"
+          for="mode-change"
           id="switch"
         >
           <input
-            id="change-mode"
+            id="mode-change"
             type="checkbox"
           />
           <span
@@ -124,7 +127,6 @@ exports[`Header correct render should match snapshot without font change window 
           />
         </label>
         <div
-          class="light"
           height="20"
           id="moon-icon"
           width="20"

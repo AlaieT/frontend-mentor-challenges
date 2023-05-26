@@ -29,7 +29,7 @@ const Audio = ({ src }: AudioProps) => {
       onClick={handleOnClick}
       onKeyDown={handleKeyDown}
     >
-      <PlayIcon width={75} height={75} />
+      <PlayIcon />
       <audio ref={audioRef}>
         <source src={src} type="audio/mp3" />
       </audio>

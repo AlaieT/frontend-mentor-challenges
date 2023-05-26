@@ -20,7 +20,7 @@ const Definition = ({
       [styles.dark]: mode === "dark"
     })}
   >
-    <h2>{partOfSpeech}</h2>
+    <h2 id={styles["part-of-speech"]}>{partOfSpeech}</h2>
     <div className={styles.meanings}>
       <h3>Meaning</h3>
       <ul>

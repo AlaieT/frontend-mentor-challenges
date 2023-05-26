@@ -10,11 +10,20 @@
   #controls {
     @include flex("space-between&center");
 
-    column-gap: 26px;
-
     & #separate {
+      margin: 0 26px;
       height: 32px;
       border-left: 1px solid $border-color-light;
+    }
+  }
+}
+
+@media (width < 768px){
+  #header {
+    #controls {  
+      & #separate {
+        margin: 0 16px;
+      }
     }
   }
 }

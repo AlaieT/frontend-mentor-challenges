@@ -60,3 +60,9 @@
     }
   }
 }
+
+@media (width < 768px) {
+  #mode {
+    width: 72px;
+  }
+}

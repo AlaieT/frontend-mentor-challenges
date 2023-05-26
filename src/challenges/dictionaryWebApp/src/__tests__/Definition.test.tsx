@@ -3,6 +3,18 @@ import { render, cleanup } from "@testing-library/react";
 
 import Definition from "../components/Definition";
 
+jest.mock("react-router-dom", () => {
+  const originalModule = jest.requireActual("react-router-dom");
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    NavLink: jest
+      .fn()
+      .mockImplementation(({ children, href }) => <a href={href}>{children}</a>)
+  };
+});
+
 afterEach(cleanup);
 
 describe("Definition", () => {
@@ -25,9 +37,7 @@ describe("Definition", () => {
   describe("correct render", () => {
     it("should match snapshot", () => {
       expect(
-        render(
-          <Definition redirectSearch={jest.fn()} mode="light" {...props} />
-        ).asFragment()
+        render(<Definition mode="light" {...props} />).asFragment()
       ).toMatchSnapshot();
     });
   });

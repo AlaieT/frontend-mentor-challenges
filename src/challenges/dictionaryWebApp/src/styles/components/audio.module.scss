@@ -22,3 +22,10 @@
     position: absolute;
   }
 }
+
+@media (width < 768px) {
+  #audio {
+    width: 48px;
+    height: 48px;
+  }
+}

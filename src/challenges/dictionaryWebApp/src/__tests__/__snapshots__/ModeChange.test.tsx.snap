@@ -6,11 +6,11 @@ exports[`ModeChange correct render should match snapshot 1`] = `
     id="mode"
   >
     <label
-      for="change-mode"
+      for="mode-change"
       id="switch"
     >
       <input
-        id="change-mode"
+        id="mode-change"
         type="checkbox"
       />
       <span
@@ -18,7 +18,6 @@ exports[`ModeChange correct render should match snapshot 1`] = `
       />
     </label>
     <div
-      class="light"
       height="20"
       id="moon-icon"
       width="20"

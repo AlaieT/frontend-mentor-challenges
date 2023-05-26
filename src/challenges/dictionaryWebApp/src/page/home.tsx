@@ -27,14 +27,16 @@ const Home = () => {
   const handleSetDefinition = React.useCallback(
     (value: any) => {
       if (value) {
-        if (isDefinition(value[0])) {
-          const phonetics = value[0].phonetics.filter(
+        const valueDefinition = value[0];
+
+        if (isDefinition(valueDefinition)) {
+          const phonetics = valueDefinition.phonetics.filter(
             (item) => !!(item.audio && item.text)
           );
 
-          if (phonetics.length > 0) value[0].phonetics = phonetics;
+          if (phonetics.length > 0) valueDefinition.phonetics = phonetics;
 
-          setDefinition(value[0]);
+          setDefinition(valueDefinition);
         }
         if (isBadResponse(value)) setDefinition(value);
       } else setDefinition(null);
@@ -46,7 +48,7 @@ const Home = () => {
     <div
       id={styles.content}
       className={classNames({
-        [styles[mode]]: mode === "dark",
+        [styles.dark]: mode === "dark",
         [styles[font.toLowerCase().replace(" ", "-")]]: true
       })}
     >
@@ -74,7 +76,7 @@ const Home = () => {
             <div id={styles.meanings}>
               {definition.meanings.map((item, idx) => (
                 <Definition
-                  key={`${item.partOfSpeech}_${idx}`}
+                  key={`${item.partOfSpeech}_${definition.meanings[idx].definitions[0]}`}
                   mode={mode}
                   partOfSpeech={item.partOfSpeech}
                   definitions={item.definitions}

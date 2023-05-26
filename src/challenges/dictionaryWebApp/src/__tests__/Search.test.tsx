@@ -9,6 +9,17 @@ import {
 
 import Search from "../components/Search";
 
+jest.mock("react-router-dom", () => {
+  const originalModule = jest.requireActual("react-router-dom");
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    useNavigate: () => () => undefined,
+    useLocation: () => ({ pathname: "/some-path" })
+  };
+});
+
 window.scrollTo = jest.fn();
 
 afterEach(() => cleanup());

@@ -21,7 +21,7 @@ const FontSelect = ({
   );
 
   return (
-    <div id={styles.font} className={styles[mode]}>
+    <div id={styles.font} className={mode === "dark" ? styles.dark : undefined}>
       <button
         id={styles["current-font"]}
         onClick={() => setSelectFont((item) => !item)}

@@ -4,7 +4,28 @@
 .definition {
   margin: 0 0 40px;
 
-  & h2 {
+  &.dark {
+    color: $text-color-dark;
+
+    & h2 {
+      &::after {
+        border-color: $border-color-dark;
+      }
+    }
+  }
+
+  & h3 {
+    margin: 0 0 25px;
+    font-size: 20px;
+    font-weight: 400;
+    color: $text-color-desc;
+  }
+
+  & ul {
+    list-style: none;
+  }
+
+  & #part-of-speech {
     margin: 0 0 40px;
     font-size: 24px;
     font-weight: 700;
@@ -20,68 +41,16 @@
     }
   }
 
-  & h3 {
-    margin: 0 0 25px;
-    font-weight: 400;
-    color: $text-color-desc;
-  }
-
-  & ul {
-    list-style: none;
-  }
-
-  &.dark {
-    color: $text-color-dark;
-
-    & h2 {
-      &::after {
-        border-color: $border-color-dark;
-      }
-    }
-
-    & span {
-      border-bottom: 1px solid $border-color-dark;
-    }
-  }
-
-  & .sym-ant {
-    margin: 40px 0 0;
-
-    @include flex("start&center");
-
-    & h3 {
-      margin: 0 22px 0 0;
-    }
-
-    & ul {
-      @include flex("center&center");
-
-      flex-wrap: wrap;
-      column-gap: 25px;
-
-      & li {
-        cursor: pointer;
-        font-size: 20px;
-        font-weight: 700;
-        color: $text-color-highlight;
-
-        &:hover {
-          text-decoration: underline;
-          text-decoration-color: $text-color-highlight;
-        }
-      }
-    }
-  }
-
   & .meanings {
+    font-size: 18px;
+    line-height: 24px;
+
     & ul {
       padding: 0 0 0 22px;
     }
 
     & li {
       margin: 0 0 13px;
-      font-size: 18px;
-      line-height: 24px;
 
       &:last-child {
         margin: 0;
@@ -104,6 +73,79 @@
       & .example {
         margin: 13px 25px 0;
         color: $text-color-desc;
+      }
+    }
+  }
+
+  & .sym-ant {
+    margin: 40px 0 0;
+    font-size: 20px;
+    font-weight: 700;
+
+    @include flex("start&center");
+
+    & h3 {
+      margin: 0 20px 0 0;
+    }
+
+    & ul {
+      @include flex("center&center");
+
+      flex-wrap: wrap;
+
+      & li {
+        margin: 0 20px;
+        color: $text-color-highlight;
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: $text-color-highlight;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+
+        & a {
+          color: $text-color-highlight;
+        }
+      }
+    }
+  }
+}
+
+@media (width < 768px) {
+  .definition {
+    & h3 {
+      margin: 0 0 17px;
+      font-size: 16px;
+    }
+
+    & #part-of-speech {
+      margin: 0 0 32px;
+      font-size: 18px;
+    }
+
+    & .meanings {
+      font-size: 15px;
+      line-height: 24px;
+
+      & ul {
+        padding: 0;
+      }
+    }
+
+    & .sym-ant {
+      font-size: 16px;
+
+      & h3 {
+        margin: 0 8px 0 0;
+      }
+
+      & ul {
+        & li {
+          margin: 0 8px;
+        }
       }
     }
   }

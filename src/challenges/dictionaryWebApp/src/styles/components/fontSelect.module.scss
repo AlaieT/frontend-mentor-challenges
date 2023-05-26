@@ -68,3 +68,15 @@
     }
   }
 }
+
+@media (width < 768px) {
+  #font {
+    font-size: 14px;
+
+    & #current-font {
+      & p {
+        margin: 0 16px 0 0;
+      }
+    }
+  }
+}

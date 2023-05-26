@@ -20,7 +20,7 @@ const ModeChange = ({ callback = () => undefined, mode }: ModeChangeProps) => (
       width={20}
       height={20}
       id={styles["moon-icon"]}
-      className={mode === "dark" ? styles[mode] : undefined}
+      className={mode === "dark" ? styles.dark : undefined}
     />
   </div>
 );

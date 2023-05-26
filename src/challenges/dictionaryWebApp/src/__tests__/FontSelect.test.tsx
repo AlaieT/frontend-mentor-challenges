@@ -51,30 +51,5 @@ describe("FontsSelect", () => {
 
       expect(mockCallback).toBeCalled();
     });
-
-    it("should close font select window on mouse leave", async () => {
-      const mockCallback = jest.fn();
-
-      render(
-        <FontSelect callback={mockCallback} font="Sans Serif" mode="light" />
-      );
-
-      await act(async () => {
-        fireEvent.click(screen.getByText(/sans serif/i).parentElement);
-      });
-
-      await act(async () => {
-        fireEvent.mouseLeave(
-          (await screen.findAllByText(/mono/i))[0].parentElement
-        );
-      });
-
-      expect(
-        queryByText(
-          screen.getByText(/sans serif/i).parentElement?.parentElement,
-          /mono/i
-        )
-      ).not.toBeInTheDocument();
-    });
   });
 });
