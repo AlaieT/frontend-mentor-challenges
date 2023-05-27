@@ -26,7 +26,8 @@
 
     "@hookform/resolvers": "^3.0.0",
     "react-hook-form": "^7.43.8",
-    "yup": "^1.0.2"
+    "yup": "^1.0.2",
+    "react-router-dom": "^6.11.2"
   },
   "devDependencies": {
     "@swc/core": "^1.3.52",

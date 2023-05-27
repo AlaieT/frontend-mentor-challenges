@@ -11,6 +11,10 @@
     {
       "name": "launch countdown timer",
       "link": "/launchCountdownTimer"
+    },
+    {
+      "name": "dictionary web app",
+      "link": "/dictionaryWebApp"
     }
   ]
 }

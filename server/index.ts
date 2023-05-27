@@ -26,6 +26,7 @@ import { fileURLToPath } from "url";
     const pageContextInit = {
       urlOriginal: req.originalUrl
     };
+
     const pageContext = await renderPage(pageContextInit);
     const { httpResponse } = pageContext;
 
