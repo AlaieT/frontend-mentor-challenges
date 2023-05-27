@@ -76,7 +76,7 @@ const Home = () => {
             <div id={styles.meanings}>
               {definition.meanings.map((item, idx) => (
                 <Definition
-                  key={`${item.partOfSpeech}_${definition.meanings[idx].definitions[0]}`}
+                  key={`${item.partOfSpeech}_${definition.meanings[idx].definitions[0].definition}`}
                   mode={mode}
                   partOfSpeech={item.partOfSpeech}
                   definitions={item.definitions}

@@ -26,7 +26,7 @@ describe("FontsSelect", () => {
       );
 
       await act(async () => {
-        fireEvent.click(screen.getByText(/sans serif/i).parentElement);
+        fireEvent.click(screen.getByRole("button"));
       });
 
       expect(asFragment()).toMatchSnapshot();
@@ -42,7 +42,7 @@ describe("FontsSelect", () => {
       );
 
       await act(async () => {
-        fireEvent.click(screen.getByText(/sans serif/i).parentElement);
+        fireEvent.click(screen.getByRole("button"));
       });
 
       await act(async () => {

@@ -20,15 +20,9 @@ describe("Header", () => {
     });
 
     it("should match snapshot with font change window", async () => {
-      const { asFragment, rerender } = render(
-        <Header font="Sans Serif" mode="light" />
-      );
+      const { asFragment } = render(<Header font="Sans Serif" mode="light" />);
 
-      await act(() =>
-        fireEvent.click(screen.getByText(/sans serif/i).parentElement)
-      );
-
-      rerender(<Header font="Sans Serif" mode="light" />);
+      await act(() => fireEvent.click(screen.getByRole("button")));
 
       expect(asFragment()).toMatchSnapshot();
     });
@@ -42,9 +36,7 @@ describe("Header", () => {
         <Header font="Sans Serif" mode="light" handleFont={mockSetFont} />
       );
 
-      await act(() =>
-        fireEvent.click(screen.getByText(/sans serif/i).parentElement)
-      );
+      await act(() => fireEvent.click(screen.getByRole("button")));
 
       await act(() => fireEvent.click(screen.getByText(/mono/i)));
 

@@ -4,7 +4,8 @@ import {
   cleanup,
   screen,
   act,
-  fireEvent
+  fireEvent,
+  waitFor
 } from "@testing-library/react";
 
 import Search from "../components/Search";
@@ -20,22 +21,32 @@ jest.mock("react-router-dom", () => {
   };
 });
 
-window.scrollTo = jest.fn();
+beforeEach(() => {
+  window.scrollTo = jest.fn();
+
+  global.fetch = jest.fn().mockImplementation(() =>
+    Promise.resolve({
+      json: () => Promise.resolve({ word: "response" })
+    })
+  );
+});
 
 afterEach(() => cleanup());
 
 describe("Search", () => {
   describe("correct render", () => {
-    it("should match snapshot", () => {
-      expect(
-        render(<Search mode="light" url="/word" />).asFragment()
-      ).toMatchSnapshot();
+    it("should match snapshot", async () => {
+      const { asFragment } = await waitFor(() =>
+        render(<Search mode="light" url="/word" />)
+      );
+
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
   describe("correct functionality", () => {
     it("should give an error when search word is empty string", async () => {
-      render(<Search mode="light" url="/word" />);
+      await waitFor(() => render(<Search mode="light" url="/word" />));
 
       fireEvent.input(screen.getByRole("textbox"), { target: { value: "" } });
 
@@ -47,13 +58,7 @@ describe("Search", () => {
     });
 
     it("should fetch word definition onsubmit", async () => {
-      global.fetch = jest.fn(() =>
-        Promise.resolve({
-          json: () => Promise.resolve({ word: "response" })
-        })
-      );
-
-      render(<Search mode="light" url="/word/response" />);
+      await waitFor(() => render(<Search mode="light" url="/word" />));
 
       fireEvent.input(screen.getByRole("textbox"), {
         target: { value: "response" }

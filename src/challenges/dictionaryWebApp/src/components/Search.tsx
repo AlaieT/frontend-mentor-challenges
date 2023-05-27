@@ -33,7 +33,7 @@ const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
   );
 
   React.useEffect(() => {
-    const pathname = location.pathname.split("/")[1];
+    const pathname = location.pathname.split("/")[1] || "";
 
     if (inputRef.current && pathname) {
       inputRef.current.value = pathname;
@@ -68,7 +68,7 @@ const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
           placeholder="Search for any word…"
           disabled={isSearch}
         />
-        <button type="submit">
+        <button type="submit" disabled={isSearch}>
           <SearchIcon width={15.55} height={15.55} />
         </button>
       </div>

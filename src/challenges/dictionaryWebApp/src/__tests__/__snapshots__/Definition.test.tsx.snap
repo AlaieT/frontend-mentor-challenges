@@ -40,8 +40,20 @@ exports[`Definition correct render should match snapshot 1`] = `
         Synonyms
       </h3>
       <ul>
-        <li />
-        <li />
+        <li>
+          <a
+            href="/synonym1"
+          >
+            synonym1
+          </a>
+        </li>
+        <li>
+          <a
+            href="/synonym2"
+          >
+            synonym2
+          </a>
+        </li>
       </ul>
     </div>
     <div
@@ -51,8 +63,20 @@ exports[`Definition correct render should match snapshot 1`] = `
         Antonyms
       </h3>
       <ul>
-        <li />
-        <li />
+        <li>
+          <a
+            href="/antonym1"
+          >
+            antonym1
+          </a>
+        </li>
+        <li>
+          <a
+            href="/antonym2"
+          >
+            antonym2
+          </a>
+        </li>
       </ul>
     </div>
   </section>

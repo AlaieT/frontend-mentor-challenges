@@ -9,9 +9,7 @@ jest.mock("react-router-dom", () => {
   return {
     __esModule: true,
     ...originalModule,
-    NavLink: jest
-      .fn()
-      .mockImplementation(({ children, href }) => <a href={href}>{children}</a>)
+    NavLink: ({ children, to }) => <a href={to}>{children}</a>
   };
 });
 

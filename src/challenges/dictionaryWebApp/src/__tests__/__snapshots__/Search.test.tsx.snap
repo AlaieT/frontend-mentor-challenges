@@ -6,14 +6,17 @@ exports[`Search correct render should match snapshot 1`] = `
     id="search-form"
   >
     <div
+      class="search"
       id="search"
     >
       <input
+        disabled=""
         id="search-input"
         placeholder="Search for any word…"
         type="text"
       />
       <button
+        disabled=""
         type="submit"
       >
         <div
