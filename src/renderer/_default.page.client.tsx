@@ -1,5 +1,5 @@
 import React from "react";
-import { hydrateRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client";
 
 import type { PageContextClient } from "../types";
 
@@ -10,8 +10,7 @@ async function render(pageContext: PageContextClient) {
       "Client-side render() hook expects pageContext.Page to be defined"
     );
   }
-  hydrateRoot(
-    document.getElementById("root")!,
+  createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
       <Page />
     </React.StrictMode>

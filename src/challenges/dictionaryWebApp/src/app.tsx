@@ -10,10 +10,15 @@ import Home from "./page/home";
 
 import "./styles/global.scss";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/*" element={<Home />} />)
-);
+const App = () => {
+    if (typeof window !== 'undefined') {
+        const router = createBrowserRouter(
+            createRoutesFromElements(<Route path="/*" element={<Home />} />)
+          );
+        return <RouterProvider router={router} />
+    }
 
-const App = () => <RouterProvider router={router} />;
+    return null
+};
 
 export default App;
