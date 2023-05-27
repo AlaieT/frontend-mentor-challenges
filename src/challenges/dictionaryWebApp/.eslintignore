@@ -1,0 +1,4 @@
+node_modules
+scripts
+src/__mocks__
+src/__tests__

@@ -1,0 +1,16 @@
+# Logs
+logs
+*.log
+yarn-debug.log*
+yarn-error.log*
+
+node_modules
+design
+dist
+dist-ssr
+*.local
+coverage
+
+# Editor directories and files
+.idea
+.DS_Store

@@ -1,0 +1,29 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+
+#header {
+  width: 100%;
+  max-width: 736px;
+
+  @include flex("space-between&center");
+
+  #controls {
+    @include flex("space-between&center");
+
+    & #separate {
+      margin: 0 26px;
+      height: 32px;
+      border-left: 1px solid $border-color-light;
+    }
+  }
+}
+
+@media (width < 768px){
+  #header {
+    #controls {  
+      & #separate {
+        margin: 0 16px;
+      }
+    }
+  }
+}

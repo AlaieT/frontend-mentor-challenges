@@ -1,0 +1,82 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+
+#font {
+  position: relative;
+  font-size: 18px;
+  font-weight: 700;
+
+  & button {
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  & .inter {
+    margin: 0 0 16px;
+    font-family: Inter, sans-serif;
+  }
+
+  & .lora {
+    margin: 0 0 16px;
+    font-family: Lora, serif;
+  }
+
+  & .inconsolata {
+    font-family: Inconsolata, monospace;
+  }
+
+  & .inter,
+  .lora,
+  .inconsolata {
+    &:hover {
+      color: $text-color-highlight;
+    }
+  }
+
+  & #current-font {
+    cursor: pointer;
+
+    @include flex("center&center");
+
+    & p {
+      margin: 0 18px 0 0;
+    }
+  }
+
+  & #select-font {
+    position: absolute;
+    top: calc(100% + 17px);
+    right: 0;
+    width: 159px;
+    padding: 24px 0 24px 24px;
+    background-color: $background-color-light;
+    box-shadow: $box-shadow-light;
+    border-radius: 16px;
+    list-style: none;
+  }
+
+  &.dark {
+    color: $text-color-dark;
+
+    & #select-font {
+      background-color: $background-color-dark;
+      box-shadow: $box-shadow-dark;
+    }
+  }
+}
+
+@media (width < 768px) {
+  #font {
+    font-size: 14px;
+
+    & #current-font {
+      & p {
+        margin: 0 16px 0 0;
+      }
+    }
+  }
+}

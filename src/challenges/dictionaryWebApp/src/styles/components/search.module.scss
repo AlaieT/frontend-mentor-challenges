@@ -1,0 +1,78 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+
+#search-form {
+  margin: 54px 0 0;
+  font-size: 20px;
+
+  #search {
+    height: 64px;
+    padding: 0 24px;
+    background-color: $background-input-color-light;
+    border: 1px solid $background-input-color-light;
+    border-radius: 16px;
+
+    @include flex("center&center");
+
+    &.error {
+      border: 1px solid $border-input-color-error;
+    }
+
+    &.search {
+      opacity: 0.5;
+    }
+
+    & input {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: inherit;
+      background-color: transparent;
+
+      &::placeholder {
+        color: $text-color-light;
+        opacity: 0.25;
+      }
+    }
+
+    & button {
+      cursor: pointer;
+      width: 15.55px;
+      height: 15.55px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+    }
+
+    &.dark {
+      background-color: $background-input-color-dark;
+      border: 1px solid $background-input-color-dark;
+
+      & input {
+        color: $text-color-dark;
+
+        &::placeholder {
+          color: $text-color-dark;
+          opacity: 0.25;
+        }
+      }
+    }
+  }
+
+  #label-error {
+    display: block;
+    margin: 8px 0 0;
+    color: $text-color-error;
+  }
+}
+
+@media (width < 768px) {
+  #search-form {
+    margin: 24px 0 0;
+    font-size: 16px;
+
+    #search {
+      height: 48px;
+    }
+  }
+}

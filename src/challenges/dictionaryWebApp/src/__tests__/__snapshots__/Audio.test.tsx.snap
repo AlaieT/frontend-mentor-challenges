@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Audio correct render should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    id="audio"
+    role="button"
+    tabindex="0"
+  >
+    <div />
+    <audio>
+      <source
+        src="https://some_audio.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+  </div>
+</DocumentFragment>
+`;

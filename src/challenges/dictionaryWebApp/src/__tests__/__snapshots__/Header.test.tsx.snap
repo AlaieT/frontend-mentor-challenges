@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header correct render should match snapshot with font change window 1`] = `
+<DocumentFragment>
+  <header
+    id="header"
+  >
+    <div
+      height="36.5"
+      width="32"
+    />
+    <div
+      id="controls"
+    >
+      <div
+        id="font"
+      >
+        <button
+          id="current-font"
+        >
+          <p>
+            Sans Serif
+          </p>
+          <div
+            height="6"
+            width="12"
+          />
+        </button>
+        <ul
+          id="select-font"
+        >
+          <li>
+            <button
+              class="inter"
+            >
+              Sans Serif
+            </button>
+          </li>
+          <li>
+            <button
+              class="lora"
+            >
+              Serif
+            </button>
+          </li>
+          <li>
+            <button
+              class="inconsolata"
+            >
+              Mono
+            </button>
+          </li>
+        </ul>
+      </div>
+      <span
+        id="separate"
+      />
+      <div
+        id="mode"
+      >
+        <label
+          for="mode-change"
+          id="switch"
+        >
+          <input
+            id="mode-change"
+            type="checkbox"
+          />
+          <span
+            class="slider"
+          />
+        </label>
+        <div
+          height="20"
+          id="moon-icon"
+          width="20"
+        />
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Header correct render should match snapshot without font change window 1`] = `
+<DocumentFragment>
+  <header
+    id="header"
+  >
+    <div
+      height="36.5"
+      width="32"
+    />
+    <div
+      id="controls"
+    >
+      <div
+        id="font"
+      >
+        <button
+          id="current-font"
+        >
+          <p>
+            Sans Serif
+          </p>
+          <div
+            height="6"
+            width="12"
+          />
+        </button>
+      </div>
+      <span
+        id="separate"
+      />
+      <div
+        id="mode"
+      >
+        <label
+          for="mode-change"
+          id="switch"
+        >
+          <input
+            id="mode-change"
+            type="checkbox"
+          />
+          <span
+            class="slider"
+          />
+        </label>
+        <div
+          height="20"
+          id="moon-icon"
+          width="20"
+        />
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;

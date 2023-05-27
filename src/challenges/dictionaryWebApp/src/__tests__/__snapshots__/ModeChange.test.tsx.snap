@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModeChange correct render should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    id="mode"
+  >
+    <label
+      for="mode-change"
+      id="switch"
+    >
+      <input
+        id="mode-change"
+        type="checkbox"
+      />
+      <span
+        class="slider"
+      />
+    </label>
+    <div
+      height="20"
+      id="moon-icon"
+      width="20"
+    />
+  </div>
+</DocumentFragment>
+`;

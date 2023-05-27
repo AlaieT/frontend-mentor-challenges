@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Definition correct render should match snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="definition"
+  >
+    <h2
+      id="part-of-speech"
+    >
+      noun
+    </h2>
+    <div
+      class="meanings"
+    >
+      <h3>
+        Meaning
+      </h3>
+      <ul>
+        <li>
+          <p
+            class="meaning"
+          >
+            An answer or reply, or something in the nature of an answer or reply.
+          </p>
+        </li>
+        <li>
+          <p
+            class="meaning"
+          >
+            The act of responding or replying; reply: as, to speak in response to a question.
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="sym-ant"
+    >
+      <h3>
+        Synonyms
+      </h3>
+      <ul>
+        <li>
+          <a
+            href="/synonym1"
+          >
+            synonym1
+          </a>
+        </li>
+        <li>
+          <a
+            href="/synonym2"
+          >
+            synonym2
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="sym-ant"
+    >
+      <h3>
+        Antonyms
+      </h3>
+      <ul>
+        <li>
+          <a
+            href="/antonym1"
+          >
+            antonym1
+          </a>
+        </li>
+        <li>
+          <a
+            href="/antonym2"
+          >
+            antonym2
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</DocumentFragment>
+`;
