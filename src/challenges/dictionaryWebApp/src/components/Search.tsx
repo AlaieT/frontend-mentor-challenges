@@ -23,7 +23,7 @@ const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
       if (inputRef.current?.value) {
         if (isError) setError(false);
 
-        navigate(`/${inputRef.current?.value}`);
+        navigate(`${location.pathname}?word=${inputRef.current?.value}`);
       } else {
         setError(true);
         callback(null);
@@ -33,14 +33,14 @@ const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
   );
 
   React.useEffect(() => {
-    const pathname = location.pathname.split("/")[1] || "";
+    const word = new URLSearchParams(location.search).get("word");
 
-    if (inputRef.current && pathname) {
-      inputRef.current.value = pathname;
+    if (inputRef.current && word) {
+      inputRef.current.value = word;
 
       setSearch(true);
 
-      fetch(url + pathname, { method: "GET" })
+      fetch(url + word, { method: "GET" })
         .then((response) => response.json())
         .then((result) => callback(result))
         .catch(() => callback(null))
