@@ -3,6 +3,7 @@ import Page from "../challenges/dictionaryWebApp/src/app";
 export { Page };
 
 export const documentProps = {
+  pageProps: { startUrl: "dictionaryWebApp" },
   title: "Dictionary Web App",
   description: "Dictionary Web App, Front-end Mentor challenge.",
   fonts:
