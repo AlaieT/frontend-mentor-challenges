@@ -1,10 +1,10 @@
-import { renderPage } from "vite-plugin-ssr";
+import { renderPage } from "vite-plugin-ssr/server";
 
 export default async function handler(req, res) {
   const { url } = req;
-  console.log("Request to url:", url);
+  console.log("Request to urlOriginal:", url);
 
-  const pageContextInit = { url };
+  const pageContextInit = { urlOriginal: url };
   const pageContext = await renderPage(pageContextInit);
   const { httpResponse } = pageContext;
 
