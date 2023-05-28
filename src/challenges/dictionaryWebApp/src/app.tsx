@@ -13,7 +13,7 @@ import "./styles/global.scss";
 const App = () => {
     if (typeof window !== 'undefined') {
         const router = createBrowserRouter(
-            createRoutesFromElements(<Route path="/*" element={<Home />} />)
+            createRoutesFromElements(<Route path={`${import.meta.env.BASE_URL}/*`} element={<Home />} />)
           );
         return <RouterProvider router={router} />
     }
