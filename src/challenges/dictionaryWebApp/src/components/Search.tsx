@@ -68,7 +68,7 @@ const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
           placeholder="Search for any word…"
           disabled={isSearch}
         />
-        <button type="submit" disabled={isSearch}>
+        <button type="submit" aria-label="start search" disabled={isSearch}>
           <SearchIcon width={15.55} height={15.55} />
         </button>
       </div>
