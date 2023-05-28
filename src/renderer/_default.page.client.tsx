@@ -10,11 +10,11 @@ async function render(pageContext: PageContextClient) {
       "Client-side render() hook expects pageContext.Page to be defined"
     );
   }
-  const { pageProps } = pageContext.exports;
+  const { documentProps } = pageContext.exports;
 
   createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-      <Page {...pageProps} />
+      <Page {...documentProps.pageProps} />
     </React.StrictMode>
   );
 }
