@@ -38,7 +38,7 @@ Users should be able to:
 
 **Desktop**             |  **Mobile**
 :-------------------------:|:-------------------------:
-![](./desktop.jpg) |  ![](./mobile.jpg)
+![](./docs/desktop.png) |  ![](./docs/mobile.png)
 
 ### Links
 
