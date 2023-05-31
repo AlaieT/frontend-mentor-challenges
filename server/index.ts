@@ -1,41 +1,46 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import express from "express";
-import compression from "compression";
-import { createServer } from "vite";
 import { renderPage } from "vite-plugin-ssr/server";
-import { dirname } from "path";
 import { fileURLToPath } from "url";
+import path from "path";
 
-(async function () {
+const dirname = path.dirname(fileURLToPath(import.meta.url));
+
+async function server() {
   const port = 3000;
   const app = express();
-  const vite = await createServer({
-      root: `${dirname(fileURLToPath(import.meta.url))}/..`,
-      configFile: `${dirname(fileURLToPath(import.meta.url))}/../scripts/vite/vite.config.ts`,
-      server: { middlewareMode: true },
-      appType: "custom"
-    });
 
-  app.use(compression());
-  app.use(vite.middlewares);
+  app.use(express.static(`${dirname}/../dist/client`));
 
   app.get("*", async (req, res, next) => {
-    const pageContextInit = {
-      urlOriginal: req.originalUrl
-    };
+    if (
+      !req.originalUrl.startsWith("/assets")
+      && !req.originalUrl.startsWith("/data")
+    ) {
+      const pageContextInit = {
+        urlOriginal: req.originalUrl
+      };
 
-    const pageContext = await renderPage(pageContextInit);
-    const { httpResponse } = pageContext;
+      const pageContext = await renderPage(pageContextInit);
+      const { httpResponse } = pageContext;
 
-    if (!httpResponse) return next();
+      if (!httpResponse) return next();
 
-    const { body, statusCode, contentType } = httpResponse;
+      const { body, statusCode, contentType } = httpResponse;
 
-    res.statusCode = statusCode;
-    res.setHeader("content-type", contentType);
-    res.end(body);
+      res.statusCode = statusCode;
+      res.setHeader("content-type", contentType);
+      res.end(body);
+    } else {
+      next();
+    }
+
+    return undefined;
   });
 
   app.listen(port);
 
   console.log(`Server running at http://localhost:${port}`);
-}());
+}
+
+server();
