@@ -23,9 +23,6 @@ function getChallengesAssets(source: string) {
 }
 
 const config: UserConfig = {
-  build: {
-    sourcemap: true
-  },
   plugins: [
     viteStaticCopy({
       targets: getChallengesAssets("./src/challenges")

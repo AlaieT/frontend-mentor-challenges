@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 
 import Header from "../components/Header";
 import Search from "../components/Search";
@@ -18,13 +18,13 @@ const isBadResponse = (value: unknown): value is BadResponse =>
   !!(value && (value as BadResponse).title);
 
 const Home = () => {
-  const [font, setFont] = React.useState<Fonts>("Sans Serif");
-  const [mode, setMode] = React.useState<Modes>("light");
-  const [definition, setDefinition] = React.useState<
+  const [font, setFont] = useState<Fonts>("Sans Serif");
+  const [mode, setMode] = useState<Modes>("light");
+  const [definition, setDefinition] = useState<
     WordDefinition | BadResponse | null
   >(null);
 
-  const handleSetDefinition = React.useCallback(
+  const handleSetDefinition = useCallback(
     (value: any) => {
       if (value) {
         const valueDefinition = value[0];

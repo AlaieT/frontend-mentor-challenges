@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 
 import type { FontSelectProps, Fonts } from "../types";
 
@@ -11,8 +11,8 @@ const FontSelect = ({
   font,
   mode
 }: FontSelectProps) => {
-  const [isSelectFont, setSelectFont] = React.useState(false);
-  const handleSetFont = React.useCallback(
+  const [isSelectFont, setSelectFont] = useState(false);
+  const handleSetFont = useCallback(
     (newFont: Fonts) => {
       setSelectFont(false);
       callback(newFont);
