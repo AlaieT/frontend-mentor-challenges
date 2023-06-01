@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import type { AudioProps } from "../types";
 
@@ -7,7 +7,7 @@ import { ReactComponent as PlayIcon } from "../assets/images/icon-play.svg";
 import styles from "../styles/components/audio.module.scss";
 
 const Audio = ({ src }: AudioProps) => {
-  const audioRef = React.useRef<HTMLAudioElement | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     e.preventDefault();

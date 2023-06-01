@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import classNames from "../utils/classNames";
@@ -12,11 +12,11 @@ import styles from "../styles/components/search.module.scss";
 const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const inputRef = React.useRef<HTMLInputElement>(null);
-  const [isError, setError] = React.useState(false);
-  const [isSearch, setSearch] = React.useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [isError, setError] = useState(false);
+  const [isSearch, setSearch] = useState(false);
 
-  const handleSubmit = React.useCallback(
+  const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
