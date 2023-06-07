@@ -1,8 +1,8 @@
 import React from "react";
 
-import type { ButtonProps } from "../../types";
-
 import styles from "../../styles/components/button.module.scss";
+
+import type { ButtonProps } from "../../types";
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, type, ...rest }, ref) => (
@@ -11,5 +11,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     </button>
   )
 );
+
+Button.displayName = "Button";
 
 export default Button;

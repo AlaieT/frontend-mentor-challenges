@@ -4,6 +4,7 @@ import Home from "./pages/home.page";
 
 import type { ResultSummaryProps } from "./types";
 
+
 import "./styles/global.scss";
 
 const App = () => {

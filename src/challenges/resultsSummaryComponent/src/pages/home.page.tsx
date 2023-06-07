@@ -4,6 +4,7 @@ import ResultSummary from "../components/ResultSummary";
 
 import type { ResultSummaryProps } from "../types";
 
+
 const Home = ({ bestOf, categoryScore }: ResultSummaryProps) => {
   return (
     <>

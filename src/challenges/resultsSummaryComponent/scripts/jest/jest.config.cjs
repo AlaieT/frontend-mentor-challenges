@@ -9,12 +9,12 @@ module.exports = {
   testEnvironment: "jsdom",
   testMatch: ["**/__tests__/**/*.(spec|test).ts?(x)"],
   transform: {
-    "^.+\\.tsx?$": "@swc/jest",
+    "^.+\\.tsx?$": "@swc/jest"
   },
   moduleNameMapper: {
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
 
-    "\\.svg$": "<rootDir>/src/__mocks__/svg.ts",
+    "\\.svg$": "<rootDir>/src/__mocks__/svg.ts"
   },
   transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
   collectCoverageFrom: [
@@ -23,13 +23,13 @@ module.exports = {
     "!**/src/types.ts",
     "!**/node_modules/**",
     "!**/dist/**",
-    "!**/__tests__/**",
+    "!**/__tests__/**"
   ],
   modulePathIgnorePatterns: [
     "<rootDir>/src/utils/*",
     "<rootDir>/src/app.ts",
     "<rootDir>/src/main.ts",
     "<rootDir>/src/types.ts",
-    "<rootDir>/scripts/vite/vite.config.ts",
-  ],
+    "<rootDir>/scripts/vite/vite.config.ts"
+  ]
 };
