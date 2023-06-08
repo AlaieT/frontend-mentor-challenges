@@ -29,7 +29,7 @@ describe("ResultSummary", () => {
     });
   });
 
-  describe("functional", () => {
+  describe("correct functionality", () => {
     it("should do correct calculation of avg score", async () => {
       render(
         <ResultSummary
