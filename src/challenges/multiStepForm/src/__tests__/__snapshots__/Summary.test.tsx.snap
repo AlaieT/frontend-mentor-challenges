@@ -29,7 +29,7 @@ exports[`Summary correct render should match snapshot 1`] = `
           </p>
           <button
             class="button"
-            id="change_plan"
+            id="change-plan"
             type="button"
           >
             Change
@@ -55,14 +55,14 @@ exports[`Summary correct render should match snapshot 1`] = `
     >
       <button
         class="button"
-        id="go_back"
+        id="go-back"
         type="button"
       >
         Go Back
       </button>
       <button
         class="button"
-        id="next_step"
+        id="next-step"
         type="submit"
       >
         Confirm

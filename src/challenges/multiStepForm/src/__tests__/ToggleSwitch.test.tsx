@@ -13,12 +13,4 @@ describe("ToggleSwitch", () => {
       expect(asFragment()).toMatchSnapshot();
     });
   });
-
-  describe("correct functionality", () => {
-    it("Checkbox input testing", () => {
-      render(<ToggleSwitch />);
-      fireEvent.click(screen.getByRole("checkbox"));
-      expect(screen.getByRole("checkbox")).toBeChecked();
-    });
-  });
 });

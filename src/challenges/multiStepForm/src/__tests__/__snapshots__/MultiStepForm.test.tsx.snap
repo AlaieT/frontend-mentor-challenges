@@ -136,7 +136,7 @@ exports[`MultiStepForm correct render should match snapshot for all steps 1`] = 
         >
           <button
             class="button"
-            id="next_step"
+            id="next-step"
             type="button"
           >
             Next Step
@@ -321,14 +321,14 @@ exports[`MultiStepForm correct render should match snapshot for all steps 2`] = 
         >
           <button
             class="button"
-            id="go_back"
+            id="go-back"
             type="button"
           >
             Go Back
           </button>
           <button
             class="button"
-            id="next_step"
+            id="next-step"
             type="button"
           >
             Next Step
@@ -487,14 +487,14 @@ exports[`MultiStepForm correct render should match snapshot for all steps 3`] = 
         >
           <button
             class="button"
-            id="go_back"
+            id="go-back"
             type="button"
           >
             Go Back
           </button>
           <button
             class="button"
-            id="next_step"
+            id="next-step"
             type="button"
           >
             Next Step
@@ -583,7 +583,7 @@ exports[`MultiStepForm correct render should match snapshot for all steps 4`] = 
               </p>
               <button
                 class="button"
-                id="change_plan"
+                id="change-plan"
                 type="button"
               >
                 Change
@@ -609,14 +609,14 @@ exports[`MultiStepForm correct render should match snapshot for all steps 4`] = 
         >
           <button
             class="button"
-            id="go_back"
+            id="go-back"
             type="button"
           >
             Go Back
           </button>
           <button
             class="button"
-            id="next_step"
+            id="next-step"
             type="submit"
           >
             Confirm
