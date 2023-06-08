@@ -2,11 +2,10 @@ import React, { useContext, useEffect } from "react";
 
 import Button from "../../Button";
 import Wrap from "../Wrap";
-
-import type { SummaryProps } from "../../../types";
-
 import styles from "../../../styles/components/steps/summary.module.scss";
 import { FormContext } from "../../../utils/context";
+
+import type { SummaryProps } from "../../../types";
 
 const Summary = ({
   plans,
@@ -19,8 +18,9 @@ const Summary = ({
   const { form } = useContext(FormContext);
   const planType = getValues("plan");
 
-  const totalPrice = plans[planType][form.planMode]
-    + Object.keys(addOns)
+  const totalPrice =
+    plans[planType][form.planMode] +
+    Object.keys(addOns)
       .map((key) => (getValues(key) ? addOns[key][form.planMode] : 0))
       .reduce((prev, curr) => prev + curr, 0);
 
@@ -39,11 +39,9 @@ const Summary = ({
         <div id={styles.info}>
           <div id={styles.plan}>
             <p>
-              {planType}
-              {" "}
-              {form.planMode}
+              {planType} {form.planMode}
             </p>
-            <Button id={styles.change_plan} onClick={() => changeStep(1)}>
+            <Button id={styles["change-plan"]} onClick={() => changeStep(1)}>
               Change
             </Button>
             <p>{`$${plans[planType][form.planMode]}/${form.priceMode}`}</p>
@@ -57,7 +55,7 @@ const Summary = ({
             </div>
           )}
           {getValues("largeStorage") && (
-            <div className={styles.add_ons}>
+            <div className={styles["add-ons"]}>
               <span>Large Storage</span>
               <span>
                 {`+ ${addOns.largeStorage[form.planMode]}/${form.priceMode}`}
@@ -68,7 +66,9 @@ const Summary = ({
             <div className={styles.add_ons}>
               <span>Customizable Profile</span>
               <span>
-                {`+ ${addOns.customizableProfile[form.planMode]}/${form.priceMode}`}
+                {`+ ${addOns.customizableProfile[form.planMode]}/${
+                  form.priceMode
+                }`}
               </span>
             </div>
           )}
@@ -79,10 +79,14 @@ const Summary = ({
         </div>
       </div>
       <div id={styles.controls}>
-        <Button id={styles.go_back} type="button" onClick={() => changeStep(2)}>
+        <Button
+          id={styles["go-back"]}
+          type="button"
+          onClick={() => changeStep(2)}
+        >
           Go Back
         </Button>
-        <Button id={styles.next_step} type="submit" disabled={!isValid}>
+        <Button id={styles["next-step"]} type="submit" disabled={!isValid}>
           Confirm
         </Button>
       </div>

@@ -2,11 +2,10 @@ import React, { useContext } from "react";
 
 import Button from "../../Button";
 import Wrap from "../Wrap";
-
-import type { PickAddOnsProps } from "../../../types";
-
 import styles from "../../../styles/components/steps/pickAddOns.module.scss";
 import { FormContext } from "../../../utils/context";
+
+import type { PickAddOnsProps } from "../../../types";
 
 const PickAddOns = ({
   addOns: { onlineService, largeStorage, customizableProfile },
@@ -72,11 +71,15 @@ const PickAddOns = ({
         </div>
       </div>
       <div id={styles.controls}>
-        <Button id={styles.go_back} type="button" onClick={() => changeStep(1)}>
+        <Button
+          id={styles["go-back"]}
+          type="button"
+          onClick={() => changeStep(1)}
+        >
           Go Back
         </Button>
         <Button
-          id={styles.next_step}
+          id={styles["next-step"]}
           type="button"
           onClick={() => changeStep(3)}
         >

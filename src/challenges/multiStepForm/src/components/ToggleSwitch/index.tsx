@@ -1,8 +1,8 @@
 import React from "react";
 
-import type { ToggleSwitchProps } from "../../types";
-
 import styles from "../../styles/components/toggleSwitch.module.scss";
+
+import type { ToggleSwitchProps } from "../../types";
 
 const ToggleSwitch = React.forwardRef<HTMLInputElement, ToggleSwitchProps>(
   ({ ...rest }, ref) => (

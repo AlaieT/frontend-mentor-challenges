@@ -1,7 +1,6 @@
 import React from "react";
 
 import { ReactComponent as IconFinish } from "../../../assets/images/icon-thank-you.svg";
-
 import styles from "../../../styles/components/steps/finish.module.scss";
 import Wrap from "../Wrap";
 

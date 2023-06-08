@@ -3,15 +3,13 @@ import React, { useContext, useState } from "react";
 import ToggleSwitch from "../../ToggleSwitch";
 import Button from "../../Button";
 import Wrap from "../Wrap";
-
-import type { SelectYourPlanProps } from "../../../types";
-
 import { ReactComponent as IconArcade } from "../../../assets/images/icon-arcade.svg";
 import { ReactComponent as IconAdvanced } from "../../../assets/images/icon-advanced.svg";
 import { ReactComponent as IconPro } from "../../../assets/images/icon-pro.svg";
-
 import styles from "../../../styles/components/steps/selectYourPlan.module.scss";
 import { FormContext } from "../../../utils/context";
+
+import type { SelectYourPlanProps } from "../../../types";
 
 const SelectYourPlan = ({
   plans: { arcade, advanced, pro },
@@ -40,7 +38,7 @@ const SelectYourPlan = ({
           <IconArcade width={40} height={40} />
           <label htmlFor="arcade">Arcade</label>
           <p>{`$${arcade[form.planMode]}/${form.priceMode}`}</p>
-          {planMode && <p>2 months free</p>}
+          {planMode ? <p>2 months free</p> : null}
         </div>
         <div className={styles.option}>
           <input
@@ -53,7 +51,7 @@ const SelectYourPlan = ({
           <IconAdvanced width={40} height={40} />
           <label htmlFor="advanced">Advanced</label>
           <p>{`$${advanced[form.planMode]}/${form.priceMode}`}</p>
-          {planMode && <p>2 months free</p>}
+          {planMode ? <p>2 months free</p> : null}
         </div>
         <div className={styles.option}>
           <input
@@ -66,7 +64,7 @@ const SelectYourPlan = ({
           <IconPro width={40} height={40} />
           <label htmlFor="pro">Pro</label>
           <p>{`$${pro[form.planMode]}/${form.priceMode}`}</p>
-          {planMode && <p>2 months free</p>}
+          {planMode ? <p>2 months free</p> : null}
         </div>
         <div id={styles.switch}>
           <label id={!planMode ? styles.selected : undefined} htmlFor="switch">
@@ -90,11 +88,15 @@ const SelectYourPlan = ({
         </div>
       </div>
       <div id={styles.controls}>
-        <Button id={styles.go_back} type="button" onClick={() => changeStep(0)}>
+        <Button
+          id={styles["go-back"]}
+          type="button"
+          onClick={() => changeStep(0)}
+        >
           Go Back
         </Button>
         <Button
-          id={styles.next_step}
+          id={styles["next-step"]}
           type="button"
           onClick={() => changeStep(2)}
         >
