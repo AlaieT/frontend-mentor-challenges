@@ -1,10 +1,9 @@
 import React from "react";
 
-import type { ModeChangeProps } from "../types";
-
 import { ReactComponent as MoonIcon } from "../assets/images/icon-moon.svg";
-
 import styles from "../styles/components/modeChange.module.scss";
+
+import type { ModeChangeProps } from "../types";
 
 const ModeChange = ({ callback = () => undefined, mode }: ModeChangeProps) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {

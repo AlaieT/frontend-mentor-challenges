@@ -5,12 +5,10 @@ import Search from "../components/Search";
 import Definition from "../components/Definition";
 import Audio from "../components/Audio";
 import classNames from "../utils/classNames";
+import { ReactComponent as NewWindowIcon } from "../assets/images/icon-new-window.svg";
+import styles from "../styles/pages/home.module.scss";
 
 import type { Fonts, Modes, WordDefinition, BadResponse } from "../types";
-
-import { ReactComponent as NewWindowIcon } from "../assets/images/icon-new-window.svg";
-
-import styles from "../styles/pages/home.module.scss";
 
 const isDefinition = (value: unknown): value is WordDefinition =>
   !!(value && (value as WordDefinition).word);

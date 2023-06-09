@@ -2,30 +2,28 @@ import React, { useState, useRef, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import classNames from "../utils/classNames";
+import { ReactComponent as SearchIcon } from "../assets/images/icon-search.svg";
+import styles from "../styles/components/search.module.scss";
 
 import type { SearchProps } from "../types";
-
-import { ReactComponent as SearchIcon } from "../assets/images/icon-search.svg";
-
-import styles from "../styles/components/search.module.scss";
 
 const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const inputRef = useRef<HTMLInputElement>(null);
-  const [isError, setError] = useState(false);
-  const [isSearch, setSearch] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
 
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
       if (inputRef.current?.value) {
-        if (isError) setError(false);
+        if (isError) setIsError(false);
 
         navigate(`${location.pathname}?word=${inputRef.current?.value}`);
       } else {
-        setError(true);
+        setIsError(true);
         callback(null);
       }
     },
@@ -38,7 +36,7 @@ const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
     if (inputRef.current && word) {
       inputRef.current.value = word;
 
-      setSearch(true);
+      setIsSearch(true);
 
       fetch(url + word, { method: "GET" })
         .then((response) => response.json())
@@ -46,7 +44,7 @@ const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
         .catch(() => callback(null))
         .finally(() => {
           window.scrollTo({ top: 0, behavior: "auto" });
-          setSearch(false);
+          setIsSearch(false);
         });
     }
   }, [url, callback, location]);
@@ -72,11 +70,11 @@ const Search = ({ mode, url, callback = () => undefined }: SearchProps) => {
           <SearchIcon width={15.55} height={15.55} />
         </button>
       </div>
-      {isError && (
+      {isError ? (
         <label id={styles["label-error"]} htmlFor="search-input">
           Whoops, can’t be empty…
         </label>
-      )}
+      ) : null}
     </form>
   );
 };
