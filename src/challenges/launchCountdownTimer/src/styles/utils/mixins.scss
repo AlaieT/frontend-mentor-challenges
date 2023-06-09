@@ -6,12 +6,12 @@
   }
 
   @if $param == "center&center" {
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   @if $param == "space-between&center" {
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 }

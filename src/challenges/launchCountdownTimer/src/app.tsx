@@ -6,17 +6,20 @@ import type { LaunchCountdownTimerProps } from "./types";
 
 import "./styles/global.scss";
 
-function App() {
+const App = () => {
   const [pageData, setPageData] = useState<null | LaunchCountdownTimerProps>(
     null
   );
 
   useEffect(() => {
     const getPageData = async () => {
-      fetch(`${import.meta.env.BASE_URL}data/pagePropsLaunchCountdownTimer.json`, {
-        method: "GET",
-        mode: "same-origin"
-      })
+      fetch(
+        `${import.meta.env.BASE_URL}data/pagePropsLaunchCountdownTimer.json`,
+        {
+          method: "GET",
+          mode: "same-origin"
+        }
+      )
         .then((response) => response.json())
         .then((data) => setPageData(data));
     };

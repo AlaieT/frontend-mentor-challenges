@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-import type { DigitProps } from "../../types";
-
 import styles from "../../styles/components/digit.module.scss";
 import classNames from "../../utils/classNames";
 
-function Digit({ label, digit }: DigitProps) {
+import type { DigitProps } from "../../types";
+
+const Digit = ({ label, digit }: DigitProps) => {
   const [lastDigit, setLastDigit] = useState(digit);
   const [isAnimated, setIsAnimated] = useState(false);
 
@@ -65,6 +65,6 @@ function Digit({ label, digit }: DigitProps) {
       </div>
     </div>
   );
-}
+};
 
 export default Digit;

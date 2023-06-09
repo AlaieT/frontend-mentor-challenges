@@ -3,7 +3,7 @@ import { render, cleanup } from "@testing-library/react";
 
 import Digit from "../components/Digit/index";
 
-afterEach(cleanup)
+afterEach(cleanup);
 
 describe("Digit", () => {
   describe("correct render", () => {

@@ -1,23 +1,20 @@
 import React from "react";
 
 import Timer from "../Timer";
-
-import type { LaunchCountdownTimerProps } from "../../types";
-
 import starsImage from "../../assets/images/bg-stars.svg";
 import hillsImage from "../../assets/images/pattern-hills.svg";
-
 import { ReactComponent as IconFacebook } from "../../assets/images/icon-facebook.svg";
 import { ReactComponent as IconPinterest } from "../../assets/images/icon-pinterest.svg";
 import { ReactComponent as IconInstagram } from "../../assets/images/icon-instagram.svg";
-
 import styles from "../../styles/components/launchCountdownTimer.module.scss";
 
-function LaunchCountdownTimer({
+import type { LaunchCountdownTimerProps } from "../../types";
+
+const LaunchCountdownTimer = ({
   deadline,
   title,
-  links,
-}: LaunchCountdownTimerProps) {
+  links
+}: LaunchCountdownTimerProps) => {
   return (
     <>
       <header>
@@ -66,6 +63,6 @@ function LaunchCountdownTimer({
       </footer>
     </>
   );
-}
+};
 
 export default LaunchCountdownTimer;

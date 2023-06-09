@@ -34,10 +34,10 @@ Users should be able to:
 
 ## My process
 
-  1. Timer logic
-  2. Card flip animation
-  3. Styles + Responsive
-  4. Testing
+1. Timer logic
+2. Card flip animation
+3. Styles + Responsive
+4. Testing
 
 ### Built with
 
