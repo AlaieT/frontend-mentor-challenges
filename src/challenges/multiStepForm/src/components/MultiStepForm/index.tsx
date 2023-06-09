@@ -5,10 +5,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Steps from "../Steps";
 import { multiStepFromSchema } from "../../utils/schemas";
 import { FormContext } from "../../utils/context";
+import styles from "../../styles/components/multiStepFrom.module.scss";
 
 import type { MultiStepFormProps, MFS, FormContextType } from "../../types";
-
-import styles from "../../styles/components/multiStepFrom.module.scss";
 
 const MultiStepForm = ({
   steps: { pickAddOns, selectYourPlan },
@@ -28,9 +27,7 @@ const MultiStepForm = ({
     getValues,
     setValue,
     trigger,
-    formState: {
-      errors, isValid, isSubmitted, isSubmitSuccessful
-    },
+    formState: { errors, isValid, isSubmitted, isSubmitSuccessful },
     handleSubmit
   } = useForm<MFS>({
     defaultValues: {
@@ -118,7 +115,7 @@ const MultiStepForm = ({
               changeStep={handleChangeStep}
             />
           )}
-          {isSubmitted && isSubmitSuccessful && <Steps.Finish />}
+          {isSubmitted && isSubmitSuccessful ? <Steps.Finish /> : null}
         </form>
       </div>
     </FormContext.Provider>

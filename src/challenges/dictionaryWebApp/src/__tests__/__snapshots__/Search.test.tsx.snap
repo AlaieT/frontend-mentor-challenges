@@ -16,6 +16,7 @@ exports[`Search correct render should match snapshot 1`] = `
         type="text"
       />
       <button
+        aria-label="start search"
         disabled=""
         type="submit"
       >

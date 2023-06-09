@@ -2,12 +2,10 @@ import React from "react";
 
 import FontSelect from "./FontSelect";
 import ModeChange from "./ModeChange";
-
 import { ReactComponent as LogoIcon } from "../assets/images/logo.svg";
+import styles from "../styles/components/header.module.scss";
 
 import type { HeaderProps } from "../types";
-
-import styles from "../styles/components/header.module.scss";
 
 const Header = ({
   font,

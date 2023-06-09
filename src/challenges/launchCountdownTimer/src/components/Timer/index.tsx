@@ -14,7 +14,7 @@ const leftTime = (deadline: string): number => {
   return diff > 0 ? diff : 0;
 };
 
-function Timer({ deadline }: TimerProps) {
+const Timer = ({ deadline }: TimerProps) => {
   const [time, setTime] = useState(leftTime(deadline));
 
   useEffect(() => {
@@ -33,6 +33,6 @@ function Timer({ deadline }: TimerProps) {
       <Digit label="seconds" digit={Math.floor((time / SECOND) % 60)} />
     </>
   );
-}
+};
 
 export default Timer;

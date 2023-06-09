@@ -2,14 +2,17 @@
 @import "../utils/mixins";
 
 #background {
-  user-select: none;
-  position: fixed;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
 
   @include flex("center&center", "col");
+
+  user-select: none;
+
+  position: fixed;
+  z-index: -1;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
 
   & img {
     width: 1920px;
@@ -17,31 +20,32 @@
 }
 
 header {
+
+  @include flex("center&center");
+
   width: 100%;
   padding: 130px 0 0;
   font-size: 12px;
   letter-spacing: 10px;
-
-  @include flex("center&center");
 }
 
 main {
-  margin: 110px 0 250px;
 
   @include flex("center&center");
 
   column-gap: 32px;
+  margin: 110px 0 250px;
 }
 
 footer {
   width: 100%;
 
   & ul {
-    list-style: none;
 
     @include flex("center&center");
 
     column-gap: 32px;
+    list-style: none;
 
     & li {
       cursor: pointer;
@@ -55,10 +59,10 @@ footer {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (width <= 700px) {
   main {
-    margin: 54px 0 250px;
     column-gap: 16px;
+    margin: 54px 0 250px;
   }
 
   header {

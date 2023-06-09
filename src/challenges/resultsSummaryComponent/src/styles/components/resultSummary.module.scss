@@ -2,24 +2,24 @@
 @import "../utils/mixins";
 
 #container {
+  @include flex("", "");
+
   border-radius: 28px;
   box-shadow: $prime-shadow;
 
-  @include flex("", "");
-
   & #result {
-    padding: 42px 58px;
-    background: $gradient-background;
-    text-align: center;
-    border-radius: 28px;
-
     @include flex("start&center", "col");
+
+    padding: 42px 58px;
+    text-align: center;
+    background: $gradient-background;
+    border-radius: 28px;
 
     & h1 {
       margin-bottom: 32px;
-      color: $second-text-color;
       font-size: $prime-font-size-h1;
       font-weight: 500;
+      color: $second-text-color;
     }
 
     & h2 {
@@ -34,34 +34,36 @@
     }
 
     & #score {
+      @include flex("center&center", "col");
+
       width: 200px;
       height: 200px;
       margin-bottom: 32px;
-      border-radius: 100%;
-      background: $gradient-background-circle;
+
       font-size: $prime-font-score;
       font-weight: 700;
 
-      @include flex("center&center", "col");
+      background: $gradient-background-circle;
+      border-radius: 100%;
 
       & span {
-        color: $second-text-color;
         font-size: $prime-font-size;
         font-weight: normal;
+        color: $second-text-color;
       }
     }
   }
 
   & #summary {
-    padding: 42px 58px;
-
     @include flex("center&center", "col");
+
+    padding: 42px 58px;
 
     & h1 {
       margin-bottom: 32px;
-      color: $summary-color;
       font-size: $prime-font-size-h1;
       font-weight: 500;
+      color: $summary-color;
     }
 
     & ul {
@@ -81,27 +83,26 @@
 
 @media screen and (max-width: $mobile) {
   #container {
-    width: 100%;
-
     @include flex("", "col");
 
-    border-top-right-radius: 0;
+    width: 100%;
     border-top-left-radius: 0;
+    border-top-right-radius: 0;
     box-shadow: none;
 
     & #result {
       padding: 20px 30px;
-      border-top-right-radius: 0;
       border-top-left-radius: 0;
+      border-top-right-radius: 0;
 
       & h1 {
         font-size: $media-font-size-h1;
       }
 
       & h2 {
+        margin-bottom: 14px;
         font-size: $media-font-size-h2;
         font-weight: 600;
-        margin-bottom: 14px;
       }
 
       & p {
@@ -120,8 +121,8 @@
       padding: 30px;
 
       & h1 {
-        font-size: $media-font-size-h1;
         margin-bottom: 22px;
+        font-size: $media-font-size-h1;
       }
 
       & ul {

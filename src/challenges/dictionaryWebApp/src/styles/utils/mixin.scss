@@ -6,22 +6,22 @@
   }
 
   @if $param == "center&center" {
+    align-items: center;
     justify-content: center;
-    align-items: center;
   }
-  
+
   @if $param == "start&center" {
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
   }
 
   @if $param == "start&end" {
-    justify-content: flex-start;
     align-items: flex-end;
+    justify-content: flex-start;
   }
 
   @if $param == "space-between&center" {
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 }

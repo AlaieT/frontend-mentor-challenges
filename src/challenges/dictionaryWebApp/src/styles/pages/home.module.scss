@@ -2,15 +2,15 @@
 @import "../utils/variables";
 
 #content {
+  @include flex("start&center", "col");
+
   width: 100%;
   min-height: 100vh;
   padding: 58px 40px 128px;
 
-  @include flex("start&center", "col");
-
   &.dark {
-    background-color: $background-color-dark;
     color: $text-color-dark;
+    background-color: $background-color-dark;
 
     #source {
       border-color: $border-color-dark;
@@ -39,9 +39,9 @@
   }
 
   & #word {
-    margin: 52px 0 0;
-
     @include flex("space-between&center");
+
+    margin: 52px 0 0;
 
     & #text {
       & p:first-child {
@@ -51,9 +51,9 @@
       }
 
       & p:last-child {
+        font-family: Inter, sans-serif;
         font-size: 24px;
         color: $text-color-highlight;
-        font-family: Inter, sans-serif;
       }
     }
   }
@@ -63,10 +63,10 @@
   }
 
   & #not-found {
+    @include flex("center&center", "col");
+
     margin: 132px 0 0;
     font-size: 64px;
-
-    @include flex("center&center", "col");
 
     & h2 {
       margin: 44px 0 24px;
@@ -83,15 +83,17 @@
   }
 
   & #source {
-    min-height: 36px;
-    padding: 21px 0 0;
-    border-top: 1px solid;
-    border-color: $border-color-light;
-    font-size: 14px;
-
     @include flex("");
 
     flex-wrap: wrap;
+
+    min-height: 36px;
+    padding: 21px 0 0;
+
+    font-size: 14px;
+
+    border-color: $border-color-light;
+    border-top: 1px solid;
 
     & p {
       margin: 0 25px 0 0;

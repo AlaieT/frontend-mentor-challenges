@@ -2,10 +2,9 @@ import React, { useMemo } from "react";
 
 import CategoryScore from "../CategoryScore";
 import Button from "../Button";
+import styles from "../../styles/components/resultSummary.module.scss";
 
 import type { ResultSummaryProps } from "../../types";
-
-import styles from "../../styles/components/resultSummary.module.scss";
 
 const ResultSummary = ({ categoryScore, bestOf }: ResultSummaryProps) => {
   const score = useMemo<number>(
@@ -34,9 +33,9 @@ const ResultSummary = ({ categoryScore, bestOf }: ResultSummaryProps) => {
       <div id={styles.summary}>
         <h1>Summary</h1>
         <ul>
-          {categoryScore.map((item) => (
-            <li key={item.category}>
-              <CategoryScore {...item} />
+          {categoryScore.map(({ category, score }) => (
+            <li key={category}>
+              <CategoryScore score={score} category={category} />
             </li>
           ))}
         </ul>

@@ -3,10 +3,9 @@ import React from "react";
 import Input from "../../Input";
 import Button from "../../Button";
 import Wrap from "../Wrap";
+import styles from "../../../styles/components/steps/yourInfo.module.scss";
 
 import type { YourInfoProps } from "../../../types";
-
-import styles from "../../../styles/components/steps/yourInfo.module.scss";
 
 const YourInfo = ({
   trigger,
@@ -61,7 +60,7 @@ const YourInfo = ({
       </div>
       <div id={styles.controls}>
         <Button
-          id={styles.next_step}
+          id={styles["next-step"]}
           type="button"
           onClick={() => handleNewStep()}
         >

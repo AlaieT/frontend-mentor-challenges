@@ -12,8 +12,8 @@ describe("ResultSummary", () => {
       { category: "Memory", score: 55 },
       { category: "Reaction", score: 59 },
       { category: "Verbal", score: 27 },
-      { category: "Visual", score: 43 },
-    ],
+      { category: "Visual", score: 43 }
+    ]
   };
 
   describe("correct render", () => {
@@ -29,7 +29,7 @@ describe("ResultSummary", () => {
     });
   });
 
-  describe("functional", () => {
+  describe("correct functionality", () => {
     it("should do correct calculation of avg score", async () => {
       render(
         <ResultSummary

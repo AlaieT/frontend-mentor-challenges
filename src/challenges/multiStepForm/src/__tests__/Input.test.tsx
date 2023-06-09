@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent, cleanup } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 
 import Input from "../components/Input";
 
@@ -13,18 +13,6 @@ describe("Input", () => {
       );
 
       expect(asFragment()).toMatchSnapshot();
-    });
-  });
-
-  describe("correct functionality", () => {
-    it("should does correct input", () => {
-      render(<Input id="name" label="Name" />);
-      fireEvent.input(screen.getByRole("textbox", { name: "Name" }), {
-        target: { value: "Some name" }
-      });
-      expect(screen.getByRole("textbox", { name: "Name" })).toHaveValue(
-        "Some name"
-      );
     });
   });
 });

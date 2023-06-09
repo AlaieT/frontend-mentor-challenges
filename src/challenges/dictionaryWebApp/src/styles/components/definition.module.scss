@@ -26,18 +26,20 @@
   }
 
   & #part-of-speech {
+    @include flex("center&center");
+
     margin: 0 0 40px;
     font-size: 24px;
     font-weight: 700;
 
-    @include flex("center&center");
-
     &::after {
       content: "";
+
       width: 100%;
       margin: 0 0 0 20px;
-      border-bottom: 1px solid;
+
       border-color: $border-color-light;
+      border-bottom: 1px solid;
     }
   }
 
@@ -61,12 +63,15 @@
 
         &::before {
           content: "";
-          margin: 0 20px 0 0;
+
+          flex: none;
+
           width: 5px;
           height: 5px;
+          margin: 0 20px 0 0;
+
           background-color: $text-color-highlight;
           border-radius: 50%;
-          flex: none;
         }
       }
 
@@ -78,11 +83,11 @@
   }
 
   & .sym-ant {
+    @include flex("start&center");
+
     margin: 40px 0 0;
     font-size: 20px;
     font-weight: 700;
-
-    @include flex("start&center");
 
     & h3 {
       margin: 0 20px 0 0;
@@ -92,23 +97,23 @@
       @include flex("center&center");
 
       flex-wrap: wrap;
+    }
 
-      & li {
-        margin: 0 20px;
+    & li {
+      margin: 0 20px;
+      color: $text-color-highlight;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: $text-color-highlight;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+
+      & a {
         color: $text-color-highlight;
-
-        &:hover {
-          text-decoration: underline;
-          text-decoration-color: $text-color-highlight;
-        }
-
-        &:last-child {
-          margin: 0;
-        }
-
-        & a {
-          color: $text-color-highlight;
-        }
       }
     }
   }

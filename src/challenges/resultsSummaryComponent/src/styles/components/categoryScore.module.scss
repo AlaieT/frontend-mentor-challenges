@@ -2,12 +2,11 @@
 @import "../utils/mixins";
 
 .container {
+  @include flex("space-between&center", "");
+
   width: 288px;
   height: 56px;
   padding: 16px;
-
-  @include flex("space-between&center", "");
-
   border-radius: 12px;
 
   &.Reaction {
@@ -39,12 +38,12 @@
   }
 
   & .score {
-    color: $summary-color;
     font-weight: 500;
+    color: $summary-color;
 
     & span {
-      color: $summary-opacity-color;
       font-weight: normal;
+      color: $summary-opacity-color;
     }
   }
 }

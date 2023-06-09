@@ -11,7 +11,7 @@ const multiStepFromSchema = object({
   onlineService: boolean().defined(),
   largeStorage: boolean().defined(),
   customizableProfile: boolean().defined(),
-  totalPrice: number().defined(),
+  totalPrice: number().defined()
 });
 
 export { multiStepFromSchema };

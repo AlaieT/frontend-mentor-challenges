@@ -1,20 +1,19 @@
 import React, { useState, useCallback } from "react";
 
-import type { FontSelectProps, Fonts } from "../types";
-
 import { ReactComponent as ArrowDownIcon } from "../assets/images/icon-arrow-down.svg";
-
 import styles from "../styles/components/fontSelect.module.scss";
+
+import type { FontSelectProps, Fonts } from "../types";
 
 const FontSelect = ({
   callback = () => undefined,
   font,
   mode
 }: FontSelectProps) => {
-  const [isSelectFont, setSelectFont] = useState(false);
+  const [isSelectFont, setIsSelectFont] = useState(false);
   const handleSetFont = useCallback(
     (newFont: Fonts) => {
-      setSelectFont(false);
+      setIsSelectFont(false);
       callback(newFont);
     },
     [callback]
@@ -24,12 +23,12 @@ const FontSelect = ({
     <div id={styles.font} className={mode === "dark" ? styles.dark : undefined}>
       <button
         id={styles["current-font"]}
-        onClick={() => setSelectFont((item) => !item)}
+        onClick={() => setIsSelectFont((item) => !item)}
       >
         <p>{font}</p>
         <ArrowDownIcon width={12} height={6} />
       </button>
-      {isSelectFont && (
+      {isSelectFont ? (
         <ul id={styles["select-font"]}>
           <li>
             <button
@@ -56,7 +55,7 @@ const FontSelect = ({
             </button>
           </li>
         </ul>
-      )}
+      ) : null}
     </div>
   );
 };

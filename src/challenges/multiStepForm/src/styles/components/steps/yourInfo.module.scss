@@ -14,9 +14,9 @@
     }
 
     & h2 {
-      color: $secondary-text-color;
       font-size: 16px;
       font-weight: 400;
+      color: $secondary-text-color;
     }
   }
 
@@ -35,23 +35,24 @@
 }
 
 #controls {
-  width: 100%;
-
   @include flex("end&center");
 
-  & #next_step {
+  width: 100%;
+
+  & #next-step {
     width: 124px;
   }
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (width <= 940px) {
   #content {
     width: calc(100% - 32px);
     min-width: 311px;
-    padding: 32px 24px;
     margin: 0 0 120px;
-    border-radius: 8px;
+    padding: 32px 24px;
+
     background-color: $background-white;
+    border-radius: 8px;
     box-shadow: $content-box-shadow;
 
     & #header {
@@ -64,7 +65,7 @@
       margin: 22px 0 0;
 
       & .field {
-        margin: 0 0 16px;  
+        margin: 0 0 16px;
       }
     }
   }

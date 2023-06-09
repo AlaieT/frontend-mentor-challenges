@@ -2,10 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import classNames from "../utils/classNames";
+import styles from "../styles/components/definition.module.scss";
 
 import type { DefinitionProps } from "../types";
-
-import styles from "../styles/components/definition.module.scss";
 
 const Definition = ({
   mode,
@@ -27,13 +26,13 @@ const Definition = ({
         {definitions.map(({ definition, example }) => (
           <li key={definition}>
             <p className={styles.meaning}>{definition}</p>
-            {example && (
+            {example ? (
               <p className={styles.example}>
                 &quot;
                 {example}
                 &quot;
               </p>
-            )}
+            ) : null}
           </li>
         ))}
       </ul>

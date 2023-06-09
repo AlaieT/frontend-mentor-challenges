@@ -2,13 +2,16 @@
 @import "../utils/mixin";
 
 #audio {
+  @include flex("center&center");
+
   cursor: pointer;
+
   position: relative;
+
   width: 75px;
   height: 75px;
-  border-radius: 50%;
 
-  @include flex("center&center");
+  border-radius: 50%;
 
   &:hover {
     background-color: $background-button-hover-color;

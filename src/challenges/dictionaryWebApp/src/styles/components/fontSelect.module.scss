@@ -8,12 +8,14 @@
 
   & button {
     cursor: pointer;
-    background: transparent;
-    outline: none;
-    border: none;
-    color: inherit;
+
     font-size: inherit;
     font-weight: inherit;
+    color: inherit;
+
+    background: transparent;
+    border: none;
+    outline: none;
   }
 
   & .inter {
@@ -39,9 +41,9 @@
   }
 
   & #current-font {
-    cursor: pointer;
-
     @include flex("center&center");
+
+    cursor: pointer;
 
     & p {
       margin: 0 18px 0 0;
@@ -52,12 +54,15 @@
     position: absolute;
     top: calc(100% + 17px);
     right: 0;
+
     width: 159px;
     padding: 24px 0 24px 24px;
-    background-color: $background-color-light;
-    box-shadow: $box-shadow-light;
-    border-radius: 16px;
+
     list-style: none;
+
+    background-color: $background-color-light;
+    border-radius: 16px;
+    box-shadow: $box-shadow-light;
   }
 
   &.dark {

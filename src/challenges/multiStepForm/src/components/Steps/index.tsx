@@ -5,5 +5,9 @@ import Summary from "./Summary";
 import Finish from "./Finish";
 
 export default {
-  YourInfo, SelectYourPlan, PickAddOns, Summary, Finish
+  YourInfo,
+  SelectYourPlan,
+  PickAddOns,
+  Summary,
+  Finish
 };
