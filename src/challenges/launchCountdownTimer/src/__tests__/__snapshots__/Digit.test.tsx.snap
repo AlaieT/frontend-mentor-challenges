@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Digit correct render should match snashot 1`] = `
+exports[`Digit correct render should match snapshot 1`] = `
 <DocumentFragment>
   <div
     class="digit"

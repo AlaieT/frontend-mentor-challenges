@@ -7,7 +7,7 @@ afterEach(cleanup);
 
 describe("Digit", () => {
   describe("correct render", () => {
-    it("should match snashot", () => {
+    it("should match snapshot", () => {
       expect(
         render(<Digit label="day" digit={24} />).asFragment()
       ).toMatchSnapshot();
