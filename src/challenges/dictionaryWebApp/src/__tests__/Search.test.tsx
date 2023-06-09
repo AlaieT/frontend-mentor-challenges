@@ -17,7 +17,10 @@ jest.mock("react-router-dom", () => {
     __esModule: true,
     ...originalModule,
     useNavigate: () => () => undefined,
-    useLocation: () => ({ pathname: "/some-path" })
+    useLocation: () => ({
+      pathname: "/?word=response",
+      search: { word: "response" }
+    })
   };
 });
 

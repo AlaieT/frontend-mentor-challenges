@@ -2,7 +2,6 @@
 @import "../utils/mixin";
 
 #header {
-
   @include flex("space-between&center");
 
   width: 100%;

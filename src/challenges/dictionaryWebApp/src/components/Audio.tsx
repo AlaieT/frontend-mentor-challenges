@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 
-
 import { ReactComponent as PlayIcon } from "../assets/images/icon-play.svg";
 import styles from "../styles/components/audio.module.scss";
 

@@ -2,7 +2,6 @@
 @import "../utils/mixin";
 
 #mode {
-
   @include flex("space-between&center");
 
   width: 80px;
