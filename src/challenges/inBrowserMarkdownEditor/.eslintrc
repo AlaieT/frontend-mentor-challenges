@@ -19,7 +19,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "project": ["./tsconfig.browser.json"]
+    "project": ["./tsconfig.json"]
   },
   "plugins": [
     "@typescript-eslint",
