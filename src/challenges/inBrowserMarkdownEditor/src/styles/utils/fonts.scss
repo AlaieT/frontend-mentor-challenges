@@ -1,0 +1,78 @@
+@mixin pick-font($font-name) {
+  @if $font-name == "Body (M)" {
+    font-family: Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  @if $font-name == "Heading (M)" {
+    font-family: Roboto, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  @if $font-name == "Heading (S)" {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  @if $font-name == "Markdown Code" {
+    font-family: "Roboto Mono", monospace;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 2px;
+  }
+
+  @if $font-name == "Preview H1" {
+    font-family: 'Roboto Slab', serif;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  @if $font-name == "Preview H2" {
+    font-family: 'Roboto Slab', serif;
+    font-size: 28px;
+    font-weight: 300;
+  }
+  
+  @if $font-name == "Preview H3" {
+    font-family: 'Roboto Slab', serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  @if $font-name == "Preview H4" {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  @if $font-name == "Preview H5" {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  @if $font-name == "Preview H6" {
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  @if $font-name == "Preview Paragraph" {
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  @if $font-name == "Preview Paragraph Bold" {
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+}
