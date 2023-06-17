@@ -4,4 +4,9 @@
   padding: 0;
 }
 
-
+html,
+body,
+div[id="root"] {
+  width: 100%;
+  min-height: 100vh;
+}

@@ -1,3 +1,2 @@
 node_modules
-/scripts/vite/vite.config.ts
-/scripts/jest/jest.config.cjs
+/scripts
