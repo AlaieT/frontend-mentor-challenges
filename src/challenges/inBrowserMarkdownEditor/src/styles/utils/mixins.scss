@@ -1,3 +1,12 @@
+@mixin flex($type) {
+  display: flex;
+
+  @if $type == "center&center" {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 @mixin pick-font($font-name) {
   @if $font-name == "Body (M)" {
     font-family: Roboto, sans-serif;
@@ -27,50 +36,50 @@
   }
 
   @if $font-name == "Preview H1" {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     font-size: 32px;
     font-weight: 700;
   }
 
   @if $font-name == "Preview H2" {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     font-size: 28px;
     font-weight: 300;
   }
-  
+
   @if $font-name == "Preview H3" {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     font-size: 24px;
     font-weight: 700;
   }
 
   @if $font-name == "Preview H4" {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     font-size: 20px;
     font-weight: 700;
   }
 
   @if $font-name == "Preview H5" {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     font-size: 16px;
     font-weight: 700;
   }
 
   @if $font-name == "Preview H6" {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     font-size: 14px;
     font-weight: 700;
   }
 
   @if $font-name == "Preview Paragraph" {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
   }
 
   @if $font-name == "Preview Paragraph Bold" {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 24px;
