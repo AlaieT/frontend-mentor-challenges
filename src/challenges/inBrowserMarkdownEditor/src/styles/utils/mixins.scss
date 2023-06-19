@@ -5,6 +5,16 @@
     align-items: center;
     justify-content: center;
   }
+
+  @if $type == "start&center" {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  @if $type == "start&end" {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
 }
 
 @mixin pick-font($font-name) {

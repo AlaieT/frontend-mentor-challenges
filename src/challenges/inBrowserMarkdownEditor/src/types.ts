@@ -5,7 +5,7 @@ export interface HeaderProps {
   handleOpenMenu: () => void;
 
   documentName: string;
-  handleDocumentName: () => void;
+  handleDocumentName: (documentName: string) => void;
 
   handleDelete: () => void;
   handleSave: () => void;
