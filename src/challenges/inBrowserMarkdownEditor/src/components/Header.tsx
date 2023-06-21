@@ -12,13 +12,14 @@ import { HeaderProps } from "../types";
 const Header = ({
   isMenuOpen,
   handleOpenMenu,
-  handleDocumentName,
   documentName = "welcome.md",
+  handleDocumentName,
   handleDelete,
   handleSave
 }: HeaderProps) => {
   const nameInputRef = useRef<HTMLInputElement>(null);
   const [isNameChange, setIsNameChange] = useState(false);
+
   const handleIsNameChange = (
     e:
       | React.MouseEvent<HTMLButtonElement>
@@ -34,7 +35,10 @@ const Header = ({
 
   return (
     <header id={styles.header}>
-      <button id={styles["menu-button"]}>
+      <button
+        id={styles["menu-button"]}
+        onClick={() => handleOpenMenu(!isMenuOpen)}
+      >
         {isMenuOpen ? <IconClose /> : <IconMenu />}
       </button>
       <div id={styles.title}>
@@ -42,7 +46,7 @@ const Header = ({
       </div>
       <span id={styles.split} />
       <div id={styles["document-name"]}>
-        <IconDocument/>
+        <IconDocument />
         <div id={styles["name-input"]}>
           <p>Document Name</p>
           <div id={styles["input-button-area"]}>

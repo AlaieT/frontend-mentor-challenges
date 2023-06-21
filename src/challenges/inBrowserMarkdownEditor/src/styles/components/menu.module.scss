@@ -1,0 +1,84 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+#menu {
+  width: 250px;
+  height: 100vh;
+  padding: 27px 24px 0;
+
+  color: $text-color-header;
+
+  background-color: $background-color-menu;
+
+  #menu-header {
+    @include pick-font("Heading (S)");
+
+    margin: 0 0 29px;
+    color: $text-color-second;
+  }
+
+  #menu-body {
+    #new-document {
+      @include pick-font("Heading (M)");
+
+      cursor: pointer;
+
+      width: 100%;
+      height: 40px;
+
+      color: inherit;
+
+      background-color: $background-color-button;
+      border: none;
+      border-radius: 4px;
+      outline: none;
+
+      &:hover {
+        background-color: $background-color-button-hover;
+      }
+    }
+
+    #documents {
+      margin: 24px 0 0;
+        
+      ul {
+        list-style: none;
+
+        & li {
+            cursor: pointer;
+
+            display: grid;
+            grid-template-areas:
+            "a b"
+            "a c";
+            grid-template-columns: max-content 100%;
+            row-gap: 3px;
+            column-gap: 16px;
+            align-items: center;
+
+            margin: 0 0 24px;
+
+            & svg {
+                grid-area: a;
+            }
+
+            & p:nth-child(2){
+                @include pick-font("Body (M)");
+
+                color: $text-color-second;
+            }
+
+            & p:nth-child(3){
+                @include pick-font("Heading (M)");
+
+                color: inherit;
+            }
+
+            &:hover{
+                color: $text-color-menu-hover;
+            }
+        }
+      }
+    }
+  }
+}
