@@ -15,6 +15,11 @@
     align-items: flex-end;
     justify-content: flex-start;
   }
+
+  @if $type == "space-between&start" {
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 }
 
 @mixin pick-font($font-name) {

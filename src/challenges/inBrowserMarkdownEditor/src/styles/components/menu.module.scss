@@ -2,24 +2,29 @@
 @import "../utils/variables";
 
 #menu {
+  @include flex("space-between&start");
+
+  flex: none;
+  flex-direction: column;
+
   width: 250px;
   height: 100vh;
-  padding: 27px 24px 0;
+  padding: 27px 24px 24px;
 
   color: $text-color-header;
 
   background-color: $background-color-menu;
 
-  #menu-header {
-    @include pick-font("Heading (S)");
-
-    margin: 0 0 29px;
-    color: $text-color-second;
-  }
-
   #menu-body {
+    #menu-title {
+      @include pick-font("Heading( S)");
+
+      margin: 0 0 29px;
+      color: $text-color-second;
+    }
+
     #new-document {
-      @include pick-font("Heading (M)");
+      @include pick-font("Heading( M)");
 
       cursor: pointer;
 
@@ -29,9 +34,7 @@
       color: inherit;
 
       background-color: $background-color-button;
-      border: none;
       border-radius: 4px;
-      outline: none;
 
       &:hover {
         background-color: $background-color-button-hover;
@@ -40,44 +43,93 @@
 
     #documents {
       margin: 24px 0 0;
-        
-      ul {
-        list-style: none;
+      list-style: none;
 
-        & li {
-            cursor: pointer;
+      & li {
+        cursor: pointer;
 
-            display: grid;
-            grid-template-areas:
-            "a b"
-            "a c";
-            grid-template-columns: max-content 100%;
-            row-gap: 3px;
-            column-gap: 16px;
-            align-items: center;
+        display: grid;
+        grid-template-areas:
+          "a b"
+          "a c";
+        grid-template-columns: max-content 100%;
+        row-gap: 3px;
+        column-gap: 16px;
+        align-items: center;
 
-            margin: 0 0 24px;
+        margin: 0 0 24px;
 
-            & svg {
-                grid-area: a;
-            }
-
-            & p:nth-child(2){
-                @include pick-font("Body (M)");
-
-                color: $text-color-second;
-            }
-
-            & p:nth-child(3){
-                @include pick-font("Heading (M)");
-
-                color: inherit;
-            }
-
-            &:hover{
-                color: $text-color-menu-hover;
-            }
+        & svg {
+          grid-area: a;
         }
+
+        & p:nth-child(2) {
+          @include pick-font("Body( M)");
+
+          color: $text-color-second;
+        }
+
+        & p:nth-child(3) {
+          @include pick-font("Heading( M)");
+
+          color: inherit;
+        }
+
+        &:hover {
+          color: $text-color-menu-hover;
+        }
+      }
+    }
+  }
+
+  #mode-controls {
+    @include flex("center&center");
+
+    #toggle-switch {
+      position: relative;
+
+      display: inline-block;
+
+      width: 48px;
+      height: 24px;
+      margin: 0 10px;
+
+      & input {
+        width: 0;
+        height: 0;
+        opacity: 0;
+      }
+
+      & span {
+        cursor: pointer;
+
+        position: absolute;
+        inset: 0;
+
+        background-color: $border-color-header-split;
+        border-radius: 15px;
+
+        transition: 0.4s;
+
+        &::before {
+          content: "";
+
+          position: absolute;
+          bottom: 6px;
+          left: 6px;
+
+          width: 12px;
+          height: 12px;
+
+          background-color: $light-background-color;
+          border-radius: 50%;
+
+          transition: 0.4s;
+        }
+      }
+
+      & input:checked + span::before {
+        transform: translateX(24px);
       }
     }
   }

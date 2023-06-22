@@ -7,7 +7,8 @@ import { ReactComponent as IconSave } from "../assets/images/icon-save.svg";
 import { ReactComponent as IconDocument } from "../assets/images/icon-document.svg";
 import { ReactComponent as Logo } from "../assets/images/logo.svg";
 import styles from "../styles/components/header.module.scss";
-import { HeaderProps } from "../types";
+
+import type { HeaderProps } from "../types";
 
 const Header = ({
   isMenuOpen,

@@ -11,11 +11,16 @@ export interface HeaderProps {
   handleSave: () => void;
 }
 
+
 interface Document {
   date: string;
   text: string;
 }
 
+export type Mode = "light" | "dark";
+
 export interface MenuProps {
   myDocuments: { [x: string]: Document };
+  mode: Mode;
+  handleMode: (mode: Mode) => void;
 }
