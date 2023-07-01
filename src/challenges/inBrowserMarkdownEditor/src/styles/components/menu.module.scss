@@ -17,14 +17,14 @@
 
   #menu-body {
     #menu-title {
-      @include pick-font("Heading( S)");
+      @include pick-font("Heading (S)");
 
       margin: 0 0 29px;
       color: $text-color-second;
     }
 
     #new-document {
-      @include pick-font("Heading( M)");
+      @include pick-font("Heading (M)");
 
       cursor: pointer;
 
@@ -64,13 +64,13 @@
         }
 
         & p:nth-child(2) {
-          @include pick-font("Body( M)");
+          @include pick-font("Body (M)");
 
           color: $text-color-second;
         }
 
         & p:nth-child(3) {
-          @include pick-font("Heading( M)");
+          @include pick-font("Heading (M)");
 
           color: inherit;
         }

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu correct render should match snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    id="menu"
+  >
+    <div
+      id="menu-body"
+    >
+      <div
+        id="menu-title"
+      >
+        MY DOCUMENTS
+      </div>
+      <button
+        id="new-document"
+      >
+        + New Document
+      </button>
+      <ul
+        id="documents"
+      >
+        <li>
+          <div />
+          <p>
+            01 April 2022
+          </p>
+          <p>
+            untitled-document.md
+          </p>
+        </li>
+        <li>
+          <div />
+          <p>
+            01 April 2022
+          </p>
+          <p>
+            welcome.md
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div
+      id="mode-controls"
+    >
+      <div />
+      <label
+        id="toggle-switch"
+      >
+        <input
+          checked=""
+          type="checkbox"
+        />
+        <span />
+      </label>
+      <div />
+    </div>
+  </nav>
+</DocumentFragment>
+`;

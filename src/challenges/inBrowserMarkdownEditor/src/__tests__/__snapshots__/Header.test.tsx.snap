@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header correct render should match snapshot 1`] = `
+<DocumentFragment>
+  <header
+    id="header"
+  >
+    <button
+      id="menu-button"
+    >
+      <div />
+    </button>
+    <div
+      id="title"
+    >
+      <div />
+    </div>
+    <span
+      id="split"
+    />
+    <div
+      id="document-name"
+    >
+      <div />
+      <div
+        id="name-input"
+      >
+        <p>
+          Document Name
+        </p>
+        <div
+          id="input-button-area"
+        >
+          <button>
+            some-document
+          </button>
+        </div>
+      </div>
+    </div>
+    <button
+      id="delete"
+    >
+      <div />
+    </button>
+    <button
+      id="save"
+    >
+      <div
+        height="16"
+        width="16"
+      />
+      <p>
+        Save Changes
+      </p>
+    </button>
+  </header>
+</DocumentFragment>
+`;
