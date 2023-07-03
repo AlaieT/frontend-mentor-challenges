@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Header from "./components/Header";
 import Menu from "./components/Menu";
+import Markdown from "./components/Markdown";
 import styles from "./styles/app.module.scss";
 import "./styles/global.scss";
 
@@ -25,6 +26,7 @@ const App = () => {
       ) : null}
       <div id={styles["inner-part"]}>
         <Header isMenuOpen={isMenuOpen} handleOpenMenu={setIsMenuOpen} />
+        <Markdown />
       </div>
     </div>
   );

@@ -24,3 +24,6 @@ export interface MenuProps {
   mode: Mode;
   handleMode: (mode: Mode) => void;
 }
+
+export interface Markdown{
+}

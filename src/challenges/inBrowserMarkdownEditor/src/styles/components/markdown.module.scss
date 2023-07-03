@@ -1,0 +1,32 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+#markdown {
+  width: 100%;
+  height: 100%;
+
+  & #markdown-section-head{
+    @include pick-font("Heading (S)");
+    @include flex("start&center");
+
+    height: 42px;
+    padding: 0 0 0 16px;
+    color: $light-text-color-section-head;
+    background-color: $light-background-color-section-head;
+  }
+
+  & textarea{
+    @include pick-font("Markdown Code");
+    
+    resize: none;
+    
+    width: 100%;
+    height: 100%;
+    padding: 9px 0 0 16px;
+    
+    color:$light-text-color-markdown;
+    
+    border: none;
+    outline: none;
+  }
+}
