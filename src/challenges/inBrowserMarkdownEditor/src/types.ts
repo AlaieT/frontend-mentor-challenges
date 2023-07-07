@@ -11,7 +11,6 @@ export interface HeaderProps {
   handleSave: () => void;
 }
 
-
 interface Document {
   date: string;
   text: string;
@@ -25,5 +24,12 @@ export interface MenuProps {
   handleMode: (mode: Mode) => void;
 }
 
-export interface Markdown{
+export interface MarkdownProps {}
+
+export interface PreviewProps {
+  markdown: {
+    type: "header";
+    subType: number | undefined;
+    value: string | undefined;
+  }[];
 }
